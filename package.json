@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/withvoid/the-hooks/issues"
   },
-  "homepage": "https://github.com/withvoid/the-hooks#readme"
+  "homepage": "https://github.com/withvoid/the-hooks#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0"
+  }
 }
