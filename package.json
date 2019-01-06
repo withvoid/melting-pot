@@ -1,0 +1,24 @@
+{
+  "name": "the-hooks",
+  "version": "1.0.0",
+  "description": "A react utility library",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withvoid/the-hooks.git"
+  },
+  "keywords": [
+    "react",
+    "utility",
+    "react-hooks"
+  ],
+  "author": "Adeel Imran <adeelimranr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/withvoid/the-hooks/issues"
+  },
+  "homepage": "https://github.com/withvoid/the-hooks#readme"
+}
