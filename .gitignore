@@ -1,6 +1,12 @@
+# dependencies
 node_modules
+
+# package manager
 yarn.lock
-.cache
+yarn-error.log
 
 # distribution
 dist
+
+# other
+.cache
