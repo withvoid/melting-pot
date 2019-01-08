@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// @withvoid/melting-pot components
+// import useWindowSize from '../src/useWindowSize';
+import { useWindowSize } from '../src';
 
 const styles = {
   root: {
@@ -21,18 +24,10 @@ const styles = {
 };
 
 const App = () => {
-  const [count, setCount] = React.useState(1);
-  const increment = () => setCount(prevCount => prevCount + 1);
-  const decrement = () => setCount(prevCount => prevCount - 1);
+  const size = useWindowSize();
   return (
     <div style={styles.root}>
-      <button type="button" style={styles.button} onClick={decrement}>
-        -
-      </button>
-      <p>Count {count}</p>
-      <button type="button" style={styles.button} onClick={increment}>
-        +
-      </button>
+      <p>{JSON.stringify(size)}</p>
     </div>
   );
 };
