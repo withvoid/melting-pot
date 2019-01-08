@@ -1,5 +1,2 @@
-const foo = 1;
-const bar = 2;
-const result = foo + bar;
-
-export default result;
+export { default as useWindowSize } from './useWindowSize';
+export { default as useNavigator } from './useNavigator';
