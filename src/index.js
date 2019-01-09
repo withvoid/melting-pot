@@ -1,2 +1,2 @@
 export { default as useWindowSize } from './useWindowSize';
-export { default as useNavigator } from './useNavigator';
+export { default as useKeyPress } from './useKeyPress';
