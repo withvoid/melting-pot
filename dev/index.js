@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Components (Use one at a time)
-import Faces from '../examples/useKeyPress/Faces';
+import Size from '../docs/useWindowSize/Size';
 
 const App = () => {
   return (
     <div>
-      <Faces />
+      <Size />
     </div>
   );
 };
