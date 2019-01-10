@@ -35,7 +35,8 @@ const useKeyPress = targetKey => {
     };
   }, []); // Empty array ensures that effect is run on mount & unmount only.
 
-  return keyPressed;
+  // return keyPressed {Boolean}, targetKey {String}
+  return [keyPressed, targetKey];
 };
 
 export default useKeyPress;
