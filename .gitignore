@@ -8,6 +8,7 @@ package-lock.json
 
 # distribution
 dist
+.docz
 
 # other
 .cache

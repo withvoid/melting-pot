@@ -7,6 +7,8 @@
     "dev": "parcel dev/index.html",
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
     "prettier": "prettier --write src/**/*.js",
@@ -29,8 +31,8 @@
   "homepage": "https://github.com/withvoid/the-hooks#readme",
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2"
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -38,6 +40,8 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-babel": "^5.3.0",
