@@ -7,6 +7,10 @@ import { createPlugin } from 'docz-core';
  *
  * Reference for doczPluginNetlify
  * https://github.com/nicholasess/docz-plugin-netlify
+ *
+ * Inspired on
+ * Rewrite rule: /index.html 200
+ * Reference: https://www.netlify.com/docs/redirects/#rewrites-and-proxying
  */
 
 const doczPluginNetlify = () => {
