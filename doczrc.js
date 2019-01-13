@@ -10,9 +10,10 @@ import { createPlugin } from 'docz-core';
  */
 
 const doczPluginNetlify = () => {
-  createPlugin({
+  return createPlugin({
     onPostBuild: config => {
-      fs.writeFileSync(`./${config.dest}/_redirects`, '/*    /index.html   200', {
+      const { dest } = config;
+      fs.writeFileSync(`./${dest}/_redirects`, '/*    /index.html   200', {
         encoding: 'utf8',
       });
     },
