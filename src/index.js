@@ -1,2 +1,2 @@
-export { default as useWindowSize } from './useWindowSize';
-export { default as useKeyPress } from './useKeyPress';
+export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useKeyPress } from './hooks/useKeyPress';
