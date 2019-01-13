@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Components (Use one at a time)
-import Size from '../docs/useWindowSize/Size';
+import { useWindowSize } from '../src';
 
 const App = () => {
+  const { width } = useWindowSize();
   return (
     <div>
-      <Size />
+      <p>width is {width}px.</p>
     </div>
   );
 };
