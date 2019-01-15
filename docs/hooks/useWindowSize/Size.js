@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Components
-import Emoji from '../components/Emoji';
 
 const styles = {
   root: {
@@ -28,20 +26,32 @@ const Size = ({ width, height }) => {
   return (
     <div style={styles.root}>
       <p style={styles.paragraph}>
-        <Emoji emoji="🤪🤪🤩" />
+        <span role="img" aria-label="emoji">
+          🤪🤪🤩
+        </span>
         Width <span style={styles.empashis}>{width} px</span>
-        <Emoji emoji="🤩" />
+        <span role="img" aria-label="emoji">
+          🤩
+        </span>
         Height <span style={styles.empashis}>{height} px</span>
-        <Emoji emoji="🤩🤪🤪" />
+        <span role="img" aria-label="emoji">
+          🤩🤪🤪
+        </span>
       </p>
       <p style={styles.paragraph}>
-        <Emoji emoji="✌🏻" />
+        <span role="img" aria-label="emoji">
+          ✌🏻
+        </span>
         Resize Browser & Watch The Emoji Change At 800px
-        <Emoji emoji="✌🏻" />
+        <span role="img" aria-label="emoji">
+          ✌🏻
+        </span>
       </p>
       <p style={styles.paragraph}>
         {[...Array(8).keys()].map(i => (
-          <Emoji key={i} emoji={width <= 800 ? '🐶' : '🦅'} />
+          <span key={i} role="img" aria-label="emoji">
+            {width <= 800 ? '🐶' : '🦅'}
+          </span>
         ))}
       </p>
     </div>

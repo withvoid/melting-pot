@@ -1,0 +1,40 @@
+---
+name: useOnlineStatus
+menu: Hooks
+---
+
+# useOnlineStatus
+
+## Usage
+```
+const { online } = useOnlineStatus();
+```
+
+## Explanation
+useOnlineStatus() internally uses the windows event listener for online & offline,
+based on that. 
+
+useOnlineStatus() has key "online" which returns type Boolean
+that will change. When internet connected or not.
+
+## Example 
+
+import { Playground } from 'docz';
+import { useOnlineStatus } from '../../../src';
+
+<Playground>
+  {() => {
+    const { online } = useOnlineStatus()
+    return (
+      <div>
+        <p>
+          <span role="img" aria-label="emoji">
+            🤩
+          </span>
+          The text below will change when you connect/disconnet the internet.
+        </p>
+        <p>{online ? 'You Are Online' : 'You Are Offline'}</p>
+      </div>
+    )
+  }}
+</Playground>

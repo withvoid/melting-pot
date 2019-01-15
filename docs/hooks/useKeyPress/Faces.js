@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Components
-import Emoji from '../components/Emoji';
 
 const styles = {
   root: {
@@ -28,14 +26,20 @@ const Faces = ({ types }) => {
   return (
     <div style={styles.root}>
       <p style={styles.paragraph}>
-        <Emoji emoji="🎒" />
+        <span role="img" aria-label="emoji">
+          🎒
+        </span>
         <span>Press a key:</span>
         <span style={styles.empashis}> {allKeys.join(', ')} </span>
-        <Emoji emoji="🎒" />
+        <span role="img" aria-label="emoji">
+          🎒
+        </span>
       </p>
       <p style={styles.paragraph}>
         {facesToShow.map(item => (
-          <span key={item.face}>{item.face}</span>
+          <span key={item.face} role="img" aria-label="emoji">
+            {item.face}
+          </span>
         ))}
       </p>
     </div>
