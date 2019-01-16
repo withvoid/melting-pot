@@ -4,3 +4,4 @@ export { default as useOnlineStatus } from './hooks/useOnlineStatus';
 export { default as useDidMount } from './hooks/useDidMount';
 export { default as useFormField } from './hooks/useFormField';
 export { default as useActive } from './hooks/useActive';
+export { default as useHover } from './hooks/useHover';
