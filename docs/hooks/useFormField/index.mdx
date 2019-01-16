@@ -1,0 +1,95 @@
+---
+name: useFormField
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useFormField } from '../../../src';
+
+# useFormField
+
+```
+const { value, set, reset, bind } = useFormField(''); 
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const {
+      value: nameValue,
+      reset: resetName,
+      bind: nameBind,
+    } = useFormField('');
+    const {
+      value: ageValue,
+      reset: resetAge,
+      bind: ageBind,
+    } = useFormField(''); 
+
+    onSubmit = event => {
+      event.preventDefault();
+      if (nameValue === '' || ageValue === '') {
+        alert('Oops! Empty form can not be submitted');
+        return;
+      }
+      alert(`Name is ${nameValue} & age is ${ageValue}`);
+      onResetForm();
+    };
+
+    onResetForm = () => {
+      resetName();
+      resetAge();
+    };
+
+    const styles = {
+      input: {
+        padding: 15,
+        marginRight: 15, 
+      },
+      button: {
+        border: 0,
+        outline: 0,
+        padding: 15,
+        backgroundColor: 'white',
+        color: 'black',
+        cursor: 'pointer',
+      },
+      displayField: {
+        display: 'inline-flex',
+        width: 210,
+      },
+    }
+  
+    return (
+      <div>
+        <form onSubmit={onSubmit}>
+          <input
+            {...nameBind}
+            placeholder="What is your name .."
+            style={styles.input}
+          />
+          <input 
+            {...ageBind}
+            placeholder="What is your age .."
+            style={styles.input}
+          />
+          <button type="submit" style={styles.button}>Submit</button>
+        </form>
+        <p>
+          <span style={styles.displayField}>Name: {nameValue}</span>
+          <span style={styles.displayField}>Age: {ageValue}</span>
+        </p>
+      </div>
+    )
+  }}
+</Playground>
+
+## API
+
+useFormField(initialValue) returns an Object
+
+* value: [String|Number] The value of input
+* set: [Function] A setter method to set value of input
+* reset: [Function] Reset form value to initialValue
+* bind [Object] Has `value` & `onChange` in object which we can spread in the form
