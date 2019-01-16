@@ -1,0 +1,51 @@
+---
+name: useActive
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useActive } from '../../../src';
+
+# useFormField
+
+```
+const { active, bind } = useActive(); 
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const { active, bind } = useActive();
+    const styles = {
+      wrapper: {
+        height: 300,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        backgroundColor: 'white',
+        color: 'black',
+      },
+      emphasis: {
+        color: 'tomato',
+        textTransform: 'capitalize',
+      },
+    }
+    return (
+      <div {...bind} style={styles.wrapper}>
+        <p>Click on the white background to change the active status</p>
+        <p>Status: <span style={styles.emphasis}>{String(active)}</span></p>
+      </div>
+    )
+  }}
+</Playground>
+
+## API
+
+useActive() returns an Object
+
+* active: [boolean] Status if active or not
+* bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
+the element. 
