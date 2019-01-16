@@ -1,6 +1,6 @@
 import React from 'react';
 
-const useActive = () => {
+const useHover = () => {
   const [hover, setHover] = React.useState(false);
   return {
     hover,
@@ -11,4 +11,4 @@ const useActive = () => {
   };
 };
 
-export default useActive;
+export default useHover;
