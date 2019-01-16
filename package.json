@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/withvoid/the-hooks.git"
+    "url": "git+https://github.com/withvoid/melting-pot.git"
   },
   "keywords": [
     "react",
@@ -26,9 +26,9 @@
   "author": "Adeel Imran <adeelimranr@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/withvoid/the-hooks/issues"
+    "url": "https://github.com/withvoid/melting-pot/issues"
   },
-  "homepage": "https://github.com/withvoid/the-hooks#readme",
+  "homepage": "https://github.com/withvoid/melting-pot#readme",
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.8.0-alpha.0",
