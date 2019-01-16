@@ -1,0 +1,54 @@
+---
+name: useTouch
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useTouch } from '../../../src';
+
+# useTouch
+
+```
+const { touched, bind } = useTouch(); 
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const { touched, bind } = useTouch();
+    const styles = {
+      wrapper: {
+        height: 300,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        backgroundColor: 'white',
+        color: 'black',
+      },
+      emphasis: {
+        color: 'tomato',
+        textTransform: 'capitalize',
+      },
+    }
+    return (
+      <div {...bind} style={styles.wrapper}>
+        <p>
+          Touch on the white background to change the status, this will
+          work for only touch enabled devices.
+        </p>
+        <p>Status: <span style={styles.emphasis}>{String(touched)}</span></p>
+      </div>
+    )
+  }}
+</Playground>
+
+## API
+
+useTouch() returns an Object
+
+* touched: [boolean] Status if active or not
+* bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
+the element. 
