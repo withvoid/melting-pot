@@ -1,0 +1,53 @@
+---
+name: useWindowScrollPosition
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useWindowScrollPosition } from '../../../src';
+
+# useWindowScrollPosition
+
+```
+const { x, y } = useWindowScrollPosition(); 
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const { x, y } = useWindowScrollPosition();
+
+    const styles = {
+      wrapper: {
+        height: 300,
+        backgroundColor: 'tomato',
+      },
+      focusSection: {
+        backgroundColor: y > 240 ? 'teal' : 'purple',
+        margin: 0,
+        padding: 30,
+      },
+      text: {
+        padding: 15,
+        color: 'white',
+      },
+    }
+
+    return (
+      <div style={styles.wrapper}>
+        <h1 style={styles.text}>
+          Scroll the window, to see the magic.
+        </h1>
+        <h3 style={styles.focusSection}>x coord: {x}, y coord {y}</h3>
+      </div>
+    )
+  }}
+</Playground>
+
+## API
+
+useWindowScrollPosition() returns an Object
+
+* x: [Number] the offset value of horizontal scroll
+* y: [Number] the offset value of vertical scroll

@@ -6,3 +6,4 @@ export { default as useFormField } from './hooks/useFormField';
 export { default as useActive } from './hooks/useActive';
 export { default as useHover } from './hooks/useHover';
 export { default as useTouch } from './hooks/useTouch';
+export { default as useWindowScrollPosition } from './hooks/useWindowScrollPosition';
