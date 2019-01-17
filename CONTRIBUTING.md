@@ -10,9 +10,9 @@ Also as a guideline, always try to keep your PR as small as possible. Focus on o
 
 As creating an issue or a pull request, please begin it with the following prefixes
 
-- **`**Breaking:**`** (For a change that will break the API)
-- **`**Feature:**`** (For when you add something that doesn’t break the API & adds more functionality to the current API)
-- **`**Fix:**`** (For when you fix something that previously didn’t function or appear correctly)
+- **`[Breaking]`** (For a change that will break the API)
+- **`[Enhancement]`** (For when you add something that doesn’t break the API & adds more functionality to the current API)
+- **`[Fix]`** (For when you fix something that previously didn’t function or appear correctly)
 
 Leaving this prefix off will prevent your PR from being included in the release. A good case to omit the prefix is when proposing infrastructural changes to the repository that doesn’t break the API. .
 
@@ -39,6 +39,8 @@ If you have an existing local repository, please update it before you start. So 
 - `git pull upstream master`
 - `git checkout -b my-topic-branch`
 - Make your changes, test and then push your code to make the pull request
+
+Here is another excellent guide called [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
 
 ## Testing
 
