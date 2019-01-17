@@ -16,30 +16,22 @@ const { value, set, reset, bind } = useFormField('');
 
 <Playground>
   {() => {
-    const {
-      value: nameValue,
-      reset: resetName,
-      bind: nameBind,
-    } = useFormField('');
-    const {
-      value: ageValue,
-      reset: resetAge,
-      bind: ageBind,
-    } = useFormField(''); 
+    const nameInput = useFormField('');
+    const ageInput = useFormField(''); 
 
     onSubmit = event => {
       event.preventDefault();
-      if (nameValue === '' || ageValue === '') {
+      if (nameInput.value === '' || ageInput.value === '') {
         alert('Oops! Empty form can not be submitted');
         return;
       }
-      alert(`Name is ${nameValue} & age is ${ageValue}`);
+      alert(`Name is ${nameInput.value} & age is ${ageInput.value}`);
       onResetForm();
     };
 
     onResetForm = () => {
-      resetName();
-      resetAge();
+      nameInput.reset();
+      ageInput.reset();
     };
 
     const styles = {
@@ -65,20 +57,20 @@ const { value, set, reset, bind } = useFormField('');
       <div>
         <form onSubmit={onSubmit}>
           <input
-            {...nameBind}
+            {...nameInput.bind}
             placeholder="What is your name .."
             style={styles.input}
           />
           <input 
-            {...ageBind}
+            {...ageInput.bind}
             placeholder="What is your age .."
             style={styles.input}
           />
           <button type="submit" style={styles.button}>Submit</button>
         </form>
         <p>
-          <span style={styles.displayField}>Name: {nameValue}</span>
-          <span style={styles.displayField}>Age: {ageValue}</span>
+          <span style={styles.displayField}>Name: {nameInput.value}</span>
+          <span style={styles.displayField}>Age: {ageInput.value}</span>
         </p>
       </div>
     )
