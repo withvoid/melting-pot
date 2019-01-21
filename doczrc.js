@@ -25,7 +25,7 @@ const doczPluginNetlify = () => {
 };
 
 export default {
-  title: 'Melting Point',
+  title: 'Melting Pot',
   description: 'A utility library for daily use.',
   source: './docs',
   debug: false,
