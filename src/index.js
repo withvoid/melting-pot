@@ -7,3 +7,4 @@ export { default as useActive } from './hooks/useActive';
 export { default as useHover } from './hooks/useHover';
 export { default as useTouch } from './hooks/useTouch';
 export { default as useWindowScrollPosition } from './hooks/useWindowScrollPosition';
+export { default as useTitle } from './hooks/useTitle';
