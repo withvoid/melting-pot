@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 
 const dist = 'dist';
-const getOutputFileByFormatType = type => `${dist}/bundle.${type}.js`;
+const getOutputFileByFormatType = type => `${dist}/melting-pot.${type}.js`;
 
 export default {
   input: 'src/index.js',
@@ -16,9 +16,12 @@ export default {
       format: 'esm', // same as 'es' (shorthand)
     },
     {
-      name: 'TheHooks',
+      name: 'MeltingPot',
       file: getOutputFileByFormatType('umd'),
       format: 'umd',
+      globals: {
+        react: 'React',
+      },
     },
   ],
   plugins: [resolve()],
