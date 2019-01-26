@@ -2,8 +2,8 @@
   "name": "@withvoid/melting-pot",
   "version": "1.0.2",
   "description": "A react utility library",
-  "main": "dist/melting-pot.esm.js",
-  "module": "dist/melting-pot.esm.js",
+  "main": "dist/melting-pot.umd.js",
+  "module": "dist/melting-pot.umd.js",
   "scripts": {
     "dev": "parcel dev/index.html",
     "prebuild": "rm -rf dist",
