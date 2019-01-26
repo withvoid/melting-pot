@@ -1,6 +1,6 @@
 {
   "name": "@withvoid/melting-pot",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A react utility library",
   "main": "dist/melting-pot.umd.js",
   "module": "dist/melting-pot.umd.js",
@@ -8,8 +8,8 @@
     "dev": "parcel dev/index.html",
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
-    "prepublish": "npm run build",
-    "publish": "npm publish",
+    "prepublishnpm": "npm run build",
+    "publishnpm": "npm publish",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "lint": "eslint --debug src/",
