@@ -5,6 +5,7 @@ const getOutputFileByFormatType = type => `${dist}/bundle.${type}.js`;
 
 export default {
   input: 'src/index.js',
+  external: ['react'],
   output: [
     {
       file: getOutputFileByFormatType('cjs'),
