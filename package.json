@@ -1,5 +1,5 @@
 {
-  "name": "melting-pot",
+  "name": "@withvoid/melting-pot",
   "version": "1.0.0",
   "description": "A react utility library",
   "main": "src/index.js",
