@@ -2,6 +2,13 @@
 
 The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use funcs and so on. See [demo and docs](https://melting-pot.now.sh/).
 
+## Demo
+
+Hosted at 2 great platforms together.
+
+Zeits NOW: [melting-pot.now.sh](https://melting-pot.now.sh/)
+Netlify: [melting-pot.netlify.com](https://melting-pot.netlify.com)
+
 ## Getting Started
 
 Install the package via npm or yarn:
