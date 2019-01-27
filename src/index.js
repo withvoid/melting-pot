@@ -1,3 +1,4 @@
+// Hooks
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as useOnlineStatus } from './hooks/useOnlineStatus';
@@ -8,3 +9,6 @@ export { default as useHover } from './hooks/useHover';
 export { default as useTouch } from './hooks/useTouch';
 export { default as useWindowScrollPosition } from './hooks/useWindowScrollPosition';
 export { default as useTitle } from './hooks/useTitle';
+
+// Higher Order Components
+export { default as withCompose } from './hoc/withCompose';
