@@ -14,7 +14,7 @@
     "docz:build": "docz build",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
-    "prettier": "prettier --write src/**/*.js docs/**/*.js",
+    "prettier": "prettier --write src/**/*.js docs/**/*.js dev/**/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
