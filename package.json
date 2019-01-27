@@ -10,6 +10,7 @@
     "build": "rollup -c",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "now-build": "npm run docz:build",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
     "prettier": "prettier --write src/**/*.js docs/**/*.js dev/**/*",
