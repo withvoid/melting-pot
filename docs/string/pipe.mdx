@@ -1,0 +1,109 @@
+---
+name: pipe
+menu: String Utils
+---
+
+import { Playground } from 'docz';
+import { pipe } from '../../src';
+
+# pipe
+
+```
+pipe({
+  value: 'John Doe',
+  toPipe: [onCapital, onRemoveSpaces, onAppendSymbol('!'), onPreAppendSymbol('==> ')],
+})
+```
+
+## How does this help?
+
+Suppose you have a string called 'John Doe' & you want to perform a series of
+string operations on them as below.
+
+* Turn all words capital.
+* Remove white spaces.
+* Append character(s) at the end of the string.
+* Prepend characters(s) at the start of the string.
+
+You probably would make the appropriate functions & wrap them around your string
+like below.
+
+```
+onPreAppendSymbol('==> ')(onAppendSymbol('@')(onRemoveSpaces(onCapital('John Doe'))));
+```
+
+The above example is not very elegant, I honestly forget the count of all the 
+closing brackets, Solution for this would be using `pipe()` that takes in all 
+the `functions` as an array & makes it use like below
+
+```
+pipe({
+  value: 'John Doe',
+  toPipe: [onCapital, onRemoveSpaces, onAppendSymbol('!'), onPreAppendSymbol('==> ')],
+});
+```
+
+I find the later solution a bit neat & elegant. Easy on the eyes. Here is an 
+example below.
+
+## Examples
+
+<Playground>
+  {() => {
+    const styles = {
+      wrapper: {
+        backgroundColor: 'white',
+        color: 'black',
+        padding: 15,
+      },
+      heading: {
+        fontSize: 18,
+        textDecoration: 'underline',
+      },
+      easy: {
+        color: 'green',
+      },
+      hard: {
+        color: 'red',
+      },
+    };
+
+    const onCapital = (string = '') => string.toUpperCase();
+
+    const onRemoveSpaces = (string = '') => string.replace(' ', '');
+
+    const onAppendSymbol = (symbol = '') => (string = '') => {
+      return `${string}${symbol}`;
+    };
+
+    const onPreAppendSymbol = (symbol = '') => (string = '') => {
+      return `${symbol}${string}`;
+    };
+
+    return (
+      <div style={styles.wrapper}>
+        <h3 style={{ ...styles.heading, ...styles.hard }}>Difficult</h3>
+        <p>{onPreAppendSymbol('==> ')(onAppendSymbol('!')(onRemoveSpaces(onCapital('John Doe'))))}</p>
+        <h3 style={{ ...styles.heading, ...styles.easy }}>Easy</h3>
+        <p>
+          {pipe({
+            value: 'John Doe',
+            toPipe: [
+              onCapital, 
+              onRemoveSpaces, 
+              onAppendSymbol('!'), 
+              onAppendSymbol('@'), 
+              onAppendSymbol('$'), 
+              onAppendSymbol('@$'), 
+              onPreAppendSymbol('==> ')
+            ],
+          })}
+        </p>
+      </div>
+    );
+  }}
+</Playground>
+
+## API
+
+* withCompose(...functions) Array of functions

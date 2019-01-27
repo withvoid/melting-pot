@@ -12,3 +12,6 @@ export { default as useTitle } from './hooks/useTitle';
 
 // Higher Order Components
 export { default as withCompose } from './hoc/withCompose';
+
+// String Utils
+export { default as pipe } from './string/pipe';
