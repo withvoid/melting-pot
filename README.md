@@ -1,6 +1,6 @@
 # Melting Pot
 
-The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use funcs and so on. See [demo and docs](https://melting-pot.netlify.com/).
+The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use funcs and so on. See [demo and docs](https://melting-pot.now.sh/).
 
 ## Getting Started
 
