@@ -8,7 +8,6 @@
     "dev": "parcel dev/index.html",
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
-    "publish:npm": "npm publish",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "lint": "eslint --debug src/",
