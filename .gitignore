@@ -12,3 +12,4 @@ dist
 
 # other
 .cache
+.history/
