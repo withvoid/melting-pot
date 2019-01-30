@@ -1,0 +1,65 @@
+---
+name: useTitle
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useTitle } from '../../../src';
+
+# useTitle
+
+## Purpose
+A hook utility to change the document title.
+
+## Usage
+
+```
+useTitle('Superman');
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const [count, setCount] = React.useState(1);
+    
+    useTitle(`Current count ${count}`);
+
+    const onChange = value => {
+      setCount(count => count + value);
+    };
+
+    const onIncrement = () => onChange(1);
+    const onDecrement = () => onChange(-1);
+
+    const styles = {
+      section: {
+        display: 'flex',
+        alignItems: 'center',
+      },
+      text: {
+        paddingLeft: 15, 
+        paddingRight: 15, 
+      },
+      button: {
+        backgroundColor: 'black',
+        color: 'white',
+        border: 0,
+        outline: 0,
+        height: 35,
+        width: 35,
+      },
+    };
+    
+    return (
+      <div>
+        <p>Look at the title of window, when you increment/decrement count</p>
+        <section style={styles.section}>
+          <button type="button" onClick={onIncrement} style={styles.button}>+</button>
+          <p style={styles.text}>Count {count}</p>
+          <button type="button" onClick={onDecrement} style={styles.button}>-</button>
+        </section>
+      </div>
+    )
+  }}
+</Playground>

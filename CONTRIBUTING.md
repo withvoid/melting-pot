@@ -28,8 +28,8 @@ Please create a new branch from the latest `master` branch on your fork.
 
 - Fork the Melting-Pot library from github
 - Clone your fork to your local machine `git clone git@github.com:<yourname>/melting-pot.git`
-- Create a new branch `git checkout -b my-topic-branch`
-- Make your changes, test and then push your code to `git push origin my-topic-branch`
+- Create a new branch `git checkout -b [PREFIX]/my-topic-branch`
+- Make your changes, test and then push your code to `git push origin [PREFIX]/my-topic-branch`
 - Visit **GitHub** and make your pull request
 
 If you have an existing local repository, please update it before you start. So that you can avoid or minimize the chances of getting merge conflicts
