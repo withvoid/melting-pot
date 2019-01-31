@@ -1,0 +1,36 @@
+---
+name: useToggle
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useToggle } from '../../../src';
+
+# useToggle
+
+```
+const { on, toggle } = useToggle(); 
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    let { on, toggle } = useToggle();
+    
+    return (
+      <div>
+        <button onClick={toggle}>
+            {on ? 'on' : 'off'}
+         </button>
+      </div>
+    )
+  }}
+</Playground>
+
+## API
+
+useToggle() returns an Object
+
+* on: [boolean] Status if on or off
+* toggle [function] Has function that toggles 'on' state. 
