@@ -34,7 +34,7 @@ Please create a new branch from the latest `master` branch on your fork.
 
 If you have an existing local repository, please update it before you start. So that you can avoid or minimize the chances of getting merge conflicts
 
-- `git remote add upstream git@github.com:withvoid/melting-pot.git`
+- `git remote add upstream http://github.com/withvoid/melting-pot.git`
 - `git checkout master`
 - `git pull upstream master`
 - `git checkout -b my-topic-branch`
