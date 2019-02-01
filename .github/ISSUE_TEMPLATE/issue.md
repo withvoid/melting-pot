@@ -7,7 +7,7 @@ about: You have identified an issue in melting-pot
 <!--- Provide a short context of the issue in the Title above -->
 
 <!--
-    Thank you very much for contributing to by creating an issue! ❤️
+    Thank you very much for contributing by creating an issue! ❤️
 -->
 
 <!-- Please confirm -->
