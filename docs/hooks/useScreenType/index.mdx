@@ -1,0 +1,21 @@
+---
+name: useDidMount
+menu: Hooks
+---
+
+# useScreenType
+
+## Purpose
+Returns an object, a set of flags of for different screen sizes
+
+`xSmall` is true when `(max-width: 575px)`
+`small` is true when `(max-width: 767px)`
+`medium` is true when `(max-width: 991px)`
+`large` is true when `(max-width: 1199px)`
+`xLarge` is true when `larger then 1199px`
+
+## Usage
+
+```
+const {  xSmall, small, medium, large, xLarge } = useScreenType();
+```
