@@ -1,8 +1,8 @@
 import React from 'react';
 
 const useToggle = (initialState = false) => {
-  let [on, setState] = React.useState(initialState);
-  const onToggle = () => setState((on = !on));
+  const [on, setState] = React.useState(initialState);
+  const onToggle = () => setState(prevState => !prevState);
   return { on, onToggle };
 };
 
