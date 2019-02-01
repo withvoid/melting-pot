@@ -2,8 +2,8 @@ import React from 'react';
 
 const useToggle = (initialState = false) => {
   let [on, setState] = React.useState(initialState);
-  const toggle = () => setState((on = !on));
-  return { on, toggle };
+  const onToggle = () => setState((on = !on));
+  return { on, onToggle };
 };
 
 export default useToggle;
