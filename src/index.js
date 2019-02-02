@@ -9,6 +9,7 @@ export { default as useHover } from './hooks/useHover';
 export { default as useTouch } from './hooks/useTouch';
 export { default as useWindowScrollPosition } from './hooks/useWindowScrollPosition';
 export { default as useTitle } from './hooks/useTitle';
+export { default as useToggle } from './hooks/useToggle';
 
 // Higher Order Components
 export { default as withCompose } from './hoc/withCompose';
