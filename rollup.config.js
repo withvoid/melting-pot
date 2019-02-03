@@ -14,7 +14,7 @@ export default {
   ],
   plugins: [
     resolve(),
-    autoExternal({ dependencies: false, peerDependencies: false }),
+    autoExternal(),
     commonjs({ include: 'node_modules/**' }),
     babel({ exclude: 'node_modules/**' }),
     terser(),
