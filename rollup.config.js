@@ -1,5 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 export default {
@@ -9,5 +11,14 @@ export default {
     { file: pkg.main, format: 'cjs', exports: 'named' },
     { file: pkg.module, format: 'es', exports: 'named' },
   ],
-  plugins: [resolve(), commonjs()],
+  plugins: [
+    resolve(),
+    commonjs({
+      include: 'node_modules/**',
+    }),
+    babel({
+      exclude: 'node_modules/**',
+    }),
+    terser(),
+  ],
 };
