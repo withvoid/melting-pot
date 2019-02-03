@@ -9,6 +9,6 @@ We primarily use GitHub as an issue tracker; for code help questions, please che
 
 -->
 
-1. Read the documentation: [Melting Pot at netlify](melting-pot.netlify.com) or [Melting Pot at now](melting-pot.now.sh)
-2. Ask questions on StackOverflow, and direct them to [Author](https://stackoverflow.com/users/4921319/adeel-imran) 
+1. Read the documentation: https://melting-pot.netlify.com
+2. Ask questions on StackOverflow, using the tag melting-pot: https://stackoverflow.com/questions/tagged/melting-pot
 
