@@ -1,5 +1,5 @@
 ---
-name: Issue
+name: Bug 🦑
 about: You have identified an issue in melting-pot
 
 ---
