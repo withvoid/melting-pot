@@ -11,8 +11,9 @@
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "now-build": "npm run docz:build",
-    "lint": "eslint --debug src/",
+    "lint:debug": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
+    "lint:stage": "eslint --fix",
     "prettier": "prettier --write src/**/*.js docs/**/*.js dev/**/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -67,8 +68,8 @@
     }
   },
   "lint-staged": {
-    "*.(js|jsx)": [
-      "npm run lint:write",
+    "*.js": [
+      "npm run lint:stage",
       "git add"
     ]
   }
