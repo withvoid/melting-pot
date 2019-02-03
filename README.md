@@ -13,7 +13,7 @@ The `@withvoid/melting-pot` package contains utilities, helper methods - your ty
 Hosted at 2 great platforms together.
 
 * Netlify: [melting-pot.netlify.com](https://melting-pot.netlify.com)
-* <strike>Zeits NOW: [melting-pot.now.sh](https://melting-pot.now.sh/)<strike> [Has issues, PR's are welcome]
+* <strike>Zeits NOW: [melting-pot.now.sh](https://melting-pot.now.sh/)</strike> [Has issues, PR's are welcome]
 
 ## Getting Started
 
