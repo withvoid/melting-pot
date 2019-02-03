@@ -34,10 +34,12 @@
   "homepage": "https://github.com/withvoid/melting-pot#readme",
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "next",
-    "react-dom": "next"
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.0-alpha.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
