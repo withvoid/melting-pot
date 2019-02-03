@@ -1,4 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
+import autoExternal from 'rollup-plugin-auto-external';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -13,12 +14,9 @@ export default {
   ],
   plugins: [
     resolve(),
-    commonjs({
-      include: 'node_modules/**',
-    }),
-    babel({
-      exclude: 'node_modules/**',
-    }),
+    autoExternal({ dependencies: true }),
+    commonjs({ include: 'node_modules/**' }),
+    babel({ exclude: 'node_modules/**' }),
     terser(),
   ],
 };
