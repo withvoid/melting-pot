@@ -1,14 +1,16 @@
 {
   "version": 2,
   "name": "melting-pot",
-  "builds": {
-    "src": "package.json",
-    "use": "@now/static-build",
-    "config": {
-      "distDir": ".docz/dist"
-    },
-    "env": {
-      "NODE_ENV": "development"
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": ".docz/dist"
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
     }
-  }
+  ]
 }
