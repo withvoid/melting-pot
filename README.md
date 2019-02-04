@@ -34,7 +34,7 @@ Create your first application like so:
 <div align="center">
   <img 
     alt="Melting-Pot code preview"
-    src="static/images/code-preview.png"
+    src="static/images/preview.png"
     height="400px"
   />
 </div>
