@@ -7,9 +7,6 @@
       "use": "@now/static-build",
       "config": {
         "distDir": ".docz/dist"
-      },
-      "env": {
-        "NODE_ENV": "development"
       }
     }
   ]
