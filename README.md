@@ -31,17 +31,10 @@ yarn add @withvoid/melting-pot
 
 Create your first application like so:
 
-```
-import React from "react"
-import { useWindowSize } from "@withvoid/melting-pot"
-
-const App = () => (
-  const {width, height} = useWindowSize();
-  <div>
-    <p>The current height of screen is {height}px</p>
-    <button type="button">
-      {width <= 340 ? 'Click': 'Click Me!'}
-    </button>
-  </div>
-)
-```
+<div align="center">
+  <img 
+    alt="Melting-Pot code preview"
+    src="static/images/code-preview.png"
+    height="400px"
+  />
+</div>
