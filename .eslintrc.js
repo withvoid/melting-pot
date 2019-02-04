@@ -22,6 +22,7 @@ module.exports = {
 	},
 	rules: {
 		'linebreak-style': 'off', // Don't play nicely with Windows.
+		'import/no-extraneous-dependencies': 'off', // turn off since react is dev dep 
 
 		'arrow-parens': 'off', // Incompatible with prettier
 		'object-curly-newline': 'off', // Incompatible with prettier

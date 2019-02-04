@@ -9,69 +9,99 @@ import { useFormField } from '../../../src';
 # useFormField
 
 ```
-const { value, set, reset, bind } = useFormField(''); 
+const { value, set, reset, isEmpty, bind } = useFormField();
 ```
 
 ## Examples
 
 <Playground>
   {() => {
-    const nameInput = useFormField('');
-    const ageInput = useFormField(''); 
+    const form = {
+      name: useFormField(),
+      age: useFormField(),
+      sex: useFormField(),
+    };
+    const [errorMessage, setErrorMessage] = React.useState('');
 
-    onSubmit = event => {
+    const onSubmit = event => {
       event.preventDefault();
-      if (nameInput.value === '' || ageInput.value === '') {
-        alert('Oops! Empty form can not be submitted');
+      const { areFieldsEmpty, emptyFields } = onValidateForm();
+      if (areFieldsEmpty) {
+        setErrorMessage(`Required fields ${emptyFields.join(', ')}`)
         return;
       }
-      alert(`Name is ${nameInput.value} & age is ${ageInput.value}`);
-      onResetForm();
+      alert('Success 😄');
+      onReset();
     };
 
-    onResetForm = () => {
-      nameInput.reset();
-      ageInput.reset();
+    const onReset = () => {
+      // reset all input fields 
+      Object.values(form).map(({ reset }) => {
+        reset();
+      });
+      // clear error message, if any
+      setErrorMessage('');
+    };
+
+    const onValidateForm = () => {
+      const emptyFields = [];
+      let areFieldsEmpty = false;
+      Object.entries(form).map(([key, ({ isEmpty })]) => {
+        if (isEmpty()) {
+          areFieldsEmpty = true;
+          emptyFields.push(key);
+        }
+      });
+      return { areFieldsEmpty, emptyFields  };
     };
 
     const styles = {
       input: {
+        display: 'block',
+        boxSizing: 'border-box',
+        width: '100%',
+        height: 35,
         padding: 15,
-        marginRight: 15, 
+        marginBottom: 15,
       },
       button: {
         border: 0,
         outline: 0,
-        padding: 15,
+        height: 35,
+        width: 75,
+        marginRight: 15,
+        borderRadius: 2,
         backgroundColor: 'white',
         color: 'black',
         cursor: 'pointer',
       },
-      displayField: {
-        display: 'inline-flex',
-        width: 210,
+      error: {
+        color: 'red',
       },
     }
-  
+
     return (
       <div>
+        {errorMessage !== '' && <p style={styles.error}>{errorMessage}</p>}
         <form onSubmit={onSubmit}>
           <input
-            {...nameInput.bind}
+            {...form.name.bind}
             placeholder="What is your name .."
             style={styles.input}
           />
           <input 
-            {...ageInput.bind}
+            {...form.age.bind}
+            placeholder="What is your age .."
+            style={styles.input}
+          />
+          <input 
+            {...form.sex.bind}
             placeholder="What is your age .."
             style={styles.input}
           />
           <button type="submit" style={styles.button}>Submit</button>
+          <button type="button" onClick={onReset} style={styles.button}>Reset</button>
         </form>
-        <p>
-          <span style={styles.displayField}>Name: {nameInput.value}</span>
-          <span style={styles.displayField}>Age: {ageInput.value}</span>
-        </p>
       </div>
     )
   }}
@@ -84,4 +114,5 @@ useFormField(initialValue) returns an Object
 * value: [String|Number] The value of input
 * set: [Function] A setter method to set value of input
 * reset: [Function] Reset form value to initialValue
+* isEmpty: [Function] Returns a boolean if field is empty or not
 * bind [Object] Has `value` & `onChange` in object which we can spread in the form
