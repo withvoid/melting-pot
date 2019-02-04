@@ -7,14 +7,14 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.js',
-  external: ['react', 'react-dom', 'prop-types'],
+  // external: ['react', 'react-dom', 'prop-types'], // see: autoExternal()
   output: [
     { file: pkg.main, format: 'cjs', exports: 'named' },
     { file: pkg.module, format: 'es', exports: 'named' },
   ],
   plugins: [
     resolve(),
-    autoExternal(),
+    autoExternal(), // will not bundle dependencies | peerDependencies
     commonjs({ include: 'node_modules/**' }),
     babel({ exclude: 'node_modules/**' }),
     terser(),
