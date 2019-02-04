@@ -1,6 +1,6 @@
 {
   "name": "@withvoid/melting-pot",
-  "version": "1.2.10",
+  "version": "1.3.0",
   "description": "A react utility library",
   "main": "dist/melting-pot.cjs.js",
   "module": "dist/melting-pot.esm.js",
