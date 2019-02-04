@@ -42,16 +42,36 @@ If you have an existing local repository, please update it before you start. So 
 
 Here is another excellent guide called [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
 
-## Testing
+## Running Locally
 
 We have a **`dev-server`** build that uses code examples of `Melting-Pot`. To get started
 
-- `yarn`
-- `yarn dev`
+```
+$ yarn
+$ yarn dev
+```
+
+## Testing the Documentation Site
+
+The documentation site contains examples of all the components. To access the documentation site locally, run:
+
+```js
+$ yarn
+$ yarn docz:dev
+```
 
 ## Coding Style
 
 Please use the coding style of `Melting-Pot`. There is linting in place, so if possible enable linting in your editor to get real time feedback.
+
+We have a Git hook in place that will ensure that no bad linted or bad formatted code is pushed. So make sure that all the linting errors have been cleared out. You can run the below commands to automate your code linting fixes.
+
+To reformat the code, run
+
+```js
+$ yarn lint:write
+$ yarn prettier
+```
 
 ## License
 
