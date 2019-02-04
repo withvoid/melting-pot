@@ -32,12 +32,11 @@
     "url": "https://github.com/withvoid/melting-pot/issues"
   },
   "homepage": "https://github.com/withvoid/melting-pot#readme",
-  "peerDependencies": {
+  "peerDependencies": {},
+  "devDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.8.0-alpha.1",
-    "react-dom": "^16.8.0-alpha.1"
-  },
-  "devDependencies": {
+    "react-dom": "^16.8.0-alpha.1",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
