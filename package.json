@@ -13,7 +13,7 @@
     "lint:debug": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
     "lint:stage": "eslint --fix",
-    "prettier": "prettier --write src/**/*.js docs/**/*.js dev/**/*",
+    "prettier": "prettier --write src/**/*.js docs/**/* dev/**/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

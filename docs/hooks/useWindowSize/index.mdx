@@ -13,16 +13,14 @@ import { useWindowSize } from '../../../src';
 const {width, height} = useWindowSize();
 ```
 
-* First argument returns a number, width of the client screen.
-* Second argument returns a number, height of the client screen.
+- First argument returns a number, width of the client screen.
+- Second argument returns a number, height of the client screen.
 
 ## Examples
 
 <Playground>
   {() => {
-    const {width, height} = useWindowSize();
-    return (
-      <Size width={width} height={height} />
-    )
+    const { width, height } = useWindowSize();
+    return <Size width={width} height={height} />;
   }}
 </Playground>
