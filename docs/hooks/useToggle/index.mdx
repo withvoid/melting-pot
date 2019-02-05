@@ -9,7 +9,7 @@ import { useToggle } from '../../../src';
 # useToggle
 
 ```
-const { on, onToggle } = useToggle(); 
+const { on, onToggle } = useToggle();
 ```
 
 ## Examples
@@ -17,14 +17,12 @@ const { on, onToggle } = useToggle();
 <Playground>
   {() => {
     let { on, onToggle } = useToggle();
-    
+
     return (
       <div>
-        <button onClick={onToggle}>
-            {on ? 'on' : 'off'}
-         </button>
+        <button onClick={onToggle}>{on ? 'on' : 'off'}</button>
       </div>
-    )
+    );
   }}
 </Playground>
 
@@ -32,5 +30,5 @@ const { on, onToggle } = useToggle();
 
 useToggle() returns an Object
 
-* on: [boolean] Status if on or off
-* onToggle [function] Has function that toggles 'on' state. 
+- on: [boolean] Status if on or off
+- onToggle [function] Has function that toggles 'on' state.

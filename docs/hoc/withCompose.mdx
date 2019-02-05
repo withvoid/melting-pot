@@ -14,25 +14,25 @@ withCompose(withA, withB)(App);
 
 ## How does this help?
 
-Suppose you have two higher order components e.g, `withA` & `withB`, `withC`, `withD` 
-that you want to use for your component called `App`, you will have to use 
+Suppose you have two higher order components e.g, `withA` & `withB`, `withC`, `withD`
+that you want to use for your component called `App`, you will have to use
 it something like below
 
 ```
 export default withA(withB(withC(withD(App))));
 ```
 
-The above example is not very elegant, I honestly forget the count of all the 
+The above example is not very elegant, I honestly forget the count of all the
 closing brackets,
 
-Solution for this would be using `withCompose` that takes in all the `hocs` & makes 
+Solution for this would be using `withCompose` that takes in all the `hocs` & makes
 it use like below
 
 ```
 export default withCompose(withA, withB, withC, withD)(App);
 ```
 
-I find the later solution a bit neat & elegant. Easy on the eyes. Here is an 
+I find the later solution a bit neat & elegant. Easy on the eyes. Here is an
 example below.
 
 ## Examples
@@ -81,9 +81,11 @@ example below.
 
     const Enhancer = withCompose(withA, withB)(App);
     return <Enhancer />
-  }}
+
+}}
+
 </Playground>
 
 ## API
 
-* withCompose(...functions) Array of functions
+- withCompose(...functions) Array of functions

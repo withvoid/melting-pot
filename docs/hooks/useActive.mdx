@@ -9,7 +9,7 @@ import { useActive } from '../../src';
 # useActive
 
 ```
-const { active, bind } = useActive(); 
+const { active, bind } = useActive();
 ```
 
 ## Examples
@@ -32,13 +32,15 @@ const { active, bind } = useActive();
         color: 'tomato',
         textTransform: 'capitalize',
       },
-    }
+    };
     return (
       <div {...bind} style={styles.wrapper}>
         <p>Click on the white background to change the active status</p>
-        <p>Status: <span style={styles.emphasis}>{String(active)}</span></p>
+        <p>
+          Status: <span style={styles.emphasis}>{String(active)}</span>
+        </p>
       </div>
-    )
+    );
   }}
 </Playground>
 
@@ -46,6 +48,6 @@ const { active, bind } = useActive();
 
 useActive() returns an Object
 
-* active: [boolean] Status if active or not
-* bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-the element. 
+- active: [boolean] Status if active or not
+- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
+  the element.

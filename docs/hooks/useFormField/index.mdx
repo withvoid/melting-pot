@@ -4,12 +4,23 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
+import PropsTable from '../../utils/PropsTable';
 import { useFormField } from '../../../src';
 
 # useFormField
 
-```
-const { value, set, reset, isEmpty, bind } = useFormField();
+```js
+const {
+  value,
+  set,
+  reset,
+  validate,
+  isEmpty,
+  isDirty,
+  isSubmitted,
+  isValid,
+  bind,
+} = useFormField();
 ```
 
 ## Examples
@@ -19,40 +30,28 @@ const { value, set, reset, isEmpty, bind } = useFormField();
     const form = {
       name: useFormField(),
       age: useFormField(),
-      sex: useFormField(),
     };
-    const [errorMessage, setErrorMessage] = React.useState('');
 
     const onSubmit = event => {
       event.preventDefault();
-      const { areFieldsEmpty, emptyFields } = onValidateForm();
-      if (areFieldsEmpty) {
-        setErrorMessage(`Required fields ${emptyFields.join(', ')}`)
+      if (!onValidate()) {
         return;
       }
-      alert('Success 😄');
+      alert('Success 😄, Let\'s Start Over!');
       onReset();
     };
 
-    const onReset = () => {
-      // reset all input fields 
-      Object.values(form).map(({ reset }) => {
-        reset();
-      });
-      // clear error message, if any
-      setErrorMessage('');
-    };
+    const onReset = () => Object.values(form).map(({ reset }) => reset());
 
-    const onValidateForm = () => {
-      const emptyFields = [];
-      let areFieldsEmpty = false;
-      Object.entries(form).map(([key, ({ isEmpty })]) => {
-        if (isEmpty()) {
-          areFieldsEmpty = true;
-          emptyFields.push(key);
+    const onValidate = () => {
+      let isValid = true;
+      Object.values(form).map(({ isEmpty, validate }) => {
+        validate();
+        if (isEmpty) {
+          isValid = false;
         }
       });
-      return { areFieldsEmpty, emptyFields  };
+      return isValid;
     };
 
     const styles = {
@@ -64,11 +63,16 @@ const { value, set, reset, isEmpty, bind } = useFormField();
         padding: 15,
         marginBottom: 15,
       },
+      inputHelper: {
+        fontSize: 11,
+        color: 'red',
+      },
       button: {
         border: 0,
         outline: 0,
         height: 35,
         width: 75,
+        marginTop: 10,
         marginRight: 15,
         borderRadius: 2,
         backgroundColor: 'white',
@@ -78,41 +82,66 @@ const { value, set, reset, isEmpty, bind } = useFormField();
       error: {
         color: 'red',
       },
-    }
+    };
 
     return (
       <div>
-        {errorMessage !== '' && <p style={styles.error}>{errorMessage}</p>}
         <form onSubmit={onSubmit}>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
             {...form.name.bind}
             placeholder="What is your name .."
             style={styles.input}
+            autoComplete="off"
           />
-          <input 
+          {form.name.isValid && (
+            <p style={styles.inputHelper}>Name is required*</p>
+          )}
+          <label htmlFor="age">Age</label>
+          <input
+            id="age"
             {...form.age.bind}
+            type="number"
             placeholder="What is your age .."
             style={styles.input}
           />
-          <input 
-            {...form.sex.bind}
-            placeholder="What is your age .."
-            style={styles.input}
-          />
+          {form.age.isValid && (
+            <p style={styles.inputHelper}>Age is required*</p>
+          )}
           <button type="submit" style={styles.button}>Submit</button>
           <button type="button" onClick={onReset} style={styles.button}>Reset</button>
         </form>
       </div>
     )
-  }}
+
+}}
+
 </Playground>
 
 ## API
 
-useFormField(initialValue) returns an Object
+useFormField(initialValue) returns an `Object`, initialValue is `optional` defaults to `''`
 
-* value: [String|Number] The value of input
-* set: [Function] A setter method to set value of input
-* reset: [Function] Reset form value to initialValue
-* isEmpty: [Function] Returns a boolean if field is empty or not
-* bind [Object] Has `value` & `onChange` in object which we can spread in the form
+<PropsTable
+  properties={[
+    { name: 'value', type: 's', description: 'value of input' },
+    { name: 'set', type: 'f', description: 'a setter method to set value of input' },
+    { name: 'reset', type: 'f', description: 'reset state to initial' },
+    { name: 'validate', type: 'f', description: 'invokes a method to validate form' },
+    { name: 'isEmpty', type: 'b', description: 'checks if form item is empty or not' },
+    { name: 'isDirty', type: 'b', description: 'checks if form item is once changed atleast' },
+    { name: 'isSubmitted', type: 'b', description: 'returns true, when validate() is invoked' },
+    {
+      name: 'isValid',
+      type: 'b',
+      description:
+        'Returns a true if `(!isEmpty && isDirty&& isSubmitted) || (!isEmpty && isDirty)`',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: '`value` & `onChange` in object which we can spread in input field',
+    },
+  ]}
+/>

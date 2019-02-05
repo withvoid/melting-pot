@@ -20,10 +20,10 @@ pipe({
 Suppose you have a string called 'John Doe' & you want to perform a series of
 string operations on them as below.
 
-* Turn all words capital.
-* Remove white spaces.
-* Append character(s) at the end of the string.
-* Prepend characters(s) at the start of the string.
+- Turn all words capital.
+- Remove white spaces.
+- Append character(s) at the end of the string.
+- Prepend characters(s) at the start of the string.
 
 You probably would make the appropriate functions & wrap them around your string
 like below.
@@ -32,8 +32,8 @@ like below.
 onPreAppendSymbol('==> ')(onAppendSymbol('@')(onRemoveSpaces(onCapital('John Doe'))));
 ```
 
-The above example is not very elegant, I honestly forget the count of all the 
-closing brackets, Solution for this would be using `pipe()` that takes in all 
+The above example is not very elegant, I honestly forget the count of all the
+closing brackets, Solution for this would be using `pipe()` that takes in all
 the `functions` as an array & makes it use like below
 
 ```
@@ -43,7 +43,7 @@ pipe({
 });
 ```
 
-I find the later solution a bit neat & elegant. Easy on the eyes. Here is an 
+I find the later solution a bit neat & elegant. Easy on the eyes. Here is an
 example below.
 
 ## Examples
@@ -89,21 +89,23 @@ example below.
           {pipe({
             value: 'John Doe',
             toPipe: [
-              onCapital, 
-              onRemoveSpaces, 
-              onAppendSymbol('!'), 
-              onAppendSymbol('@'), 
-              onAppendSymbol('$'), 
-              onAppendSymbol('@$'), 
+              onCapital,
+              onRemoveSpaces,
+              onAppendSymbol('!'),
+              onAppendSymbol('@'),
+              onAppendSymbol('$'),
+              onAppendSymbol('@$'),
               onPreAppendSymbol('==> ')
             ],
           })}
         </p>
       </div>
     );
-  }}
+
+}}
+
 </Playground>
 
 ## API
 
-* withCompose(...functions) Array of functions
+- withCompose(...functions) Array of functions

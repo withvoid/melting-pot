@@ -9,7 +9,7 @@ import { useHover } from '../../../src';
 # useHover
 
 ```
-const { hover, bind } = useHover(); 
+const { hover, bind } = useHover();
 ```
 
 ## Examples
@@ -32,13 +32,15 @@ const { hover, bind } = useHover();
         color: 'tomato',
         textTransform: 'capitalize',
       },
-    }
+    };
     return (
       <div {...bind} style={styles.wrapper}>
         <p>Hover on the white background to change the hover status</p>
-        <p>Status: <span style={styles.emphasis}>{String(hover)}</span></p>
+        <p>
+          Status: <span style={styles.emphasis}>{String(hover)}</span>
+        </p>
       </div>
-    )
+    );
   }}
 </Playground>
 
@@ -46,6 +48,6 @@ const { hover, bind } = useHover();
 
 useHover() returns an Object
 
-* hover: [boolean] Status if active or not
-* bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-the element. 
+- hover: [boolean] Status if active or not
+- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
+  the element.
