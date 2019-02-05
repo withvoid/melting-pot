@@ -1,6 +1,6 @@
 {
   "name": "@withvoid/melting-pot",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "A react utility library",
   "main": "dist/melting-pot.cjs.js",
   "module": "dist/melting-pot.esm.js",
@@ -55,10 +55,10 @@
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
     "rollup": "^1.0.2",
-    "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
     "rollup-plugin-terser": "^4.0.3"
   },
   "husky": {
