@@ -32,6 +32,9 @@ const getType = type => {
     case 'f': {
       return 'function';
     }
+    case 'o': {
+      return 'object';
+    }
     default: {
       return 'NaN';
     }
