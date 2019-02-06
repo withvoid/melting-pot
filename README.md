@@ -4,6 +4,9 @@
   <img src="https://badgen.net/npm/v/@withvoid/melting-pot" alt="">
   <img src="https://badgen.net/badge/license/MIT/blue" alt="">
   <img src="https://badgen.net/npm/dt/@withvoid/melting-pot" alt="">
+  <a href="https://packagephobia.now.sh/result?p=@withvoid/melting-pot@latest">
+    <img src="https://packagephobia.now.sh/badge?p=@withvoid/melting-pot@latest" alt="">
+  </a>
 </p>
 
 The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use functions (mostly in hooks).
