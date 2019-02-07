@@ -4,7 +4,7 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
-import { useToggle } from '../../../src';
+import { useToggle } from '../../src';
 
 # useToggle
 
@@ -16,7 +16,7 @@ const { on, onToggle } = useToggle();
 
 <Playground>
   {() => {
-    let { on, onToggle } = useToggle();
+    const { on, onToggle } = useToggle();
 
     return (
       <div>
