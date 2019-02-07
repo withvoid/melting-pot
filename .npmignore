@@ -4,6 +4,10 @@
 .vscode/
 dev/
 docs/
+static/
+
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
 
 .babelrc
 .gitattributes
