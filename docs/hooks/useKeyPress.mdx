@@ -41,7 +41,7 @@ const [isKeyPressed, key] = useKeyPress('a');
       <div style={styles.root}>
         <p style={styles.paragraph}>
           <span role="img" aria-label="emoji">🎒</span>
-            Press h, s, r, f 
+            Press h, s, r, f
           <span role="img" aria-label="emoji">🎒</span>
           {isHappyPress && <span role="img" aria-label="emoji">😊</span>}
           {isSadPress && <span role="img" aria-label="emoji">😢</span>}
@@ -50,5 +50,7 @@ const [isKeyPressed, key] = useKeyPress('a');
         </p>
       </div>
     );
-  }}
+
+}}
+
 </Playground>
