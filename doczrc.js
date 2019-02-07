@@ -31,7 +31,7 @@ export default {
   debug: false,
   theme: 'docz-theme-default',
   themeConfig: {
-    mode: 'dark',
+    mode: 'light',
     colors: {
       primary: '#CC1F2D',
     },
