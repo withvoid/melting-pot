@@ -16,8 +16,8 @@ const App = () => {
   const [data, setData] = React.useState('');
   useDidMount(async () => {
     try {
-      const result = fetch('http://foo-api', {  method: 'GET' });
-      const resultJson = result.json();
+      const result = await fetch('http://foo-api', {  method: 'GET' });
+      const resultJson = await result.json();
       setData(resultJson.fooName)
     } catch (error) { 
       console.log('API error', error);
