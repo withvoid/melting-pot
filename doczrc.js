@@ -32,9 +32,6 @@ export default {
   theme: 'docz-theme-default',
   themeConfig: {
     mode: 'light',
-    colors: {
-      primary: '#CC1F2D',
-    },
   },
   plugins: [doczPluginNetlify()],
 };
