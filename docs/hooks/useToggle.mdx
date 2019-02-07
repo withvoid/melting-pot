@@ -4,6 +4,7 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
+import PropsTable from '../utils/PropsTable';
 import { useToggle } from '../../src';
 
 # useToggle
@@ -18,19 +19,41 @@ const { on, onToggle } = useToggle();
   {() => {
     const { on, onToggle } = useToggle();
 
+    const styles = {
+      container: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: on ? '#81a1c1' : '#d8dee9',
+        padding: 20,
+      },
+      button: {
+        backgroundColor: on ? 'tomato' : 'gray',
+        color: 'white',
+        border: 0,
+        padding: '10px 30px',
+        outline: 0,
+        cursor: 'pointer'
+      },
+    }
+
     return (
-      <div>
-        <button onClick={onToggle}>{on ? 'on' : 'off'}</button>
+      <div style={styles.container}>
+        <button style={styles.button} onClick={onToggle}>
+          {on ? 'On' : 'Off'}
+        </button>
       </div>
     );
-
-}}
-
+  }}
 </Playground>
 
 ## API
 
-useToggle() returns an Object
+useToggle() returns an `Object`
 
-- on: [boolean] Status if on or off
-- onToggle [function] Has function that toggles 'on' state.
+<PropsTable
+  properties={[
+    { name: 'on', type: 'b', description: 'status of toggle if on or off' },
+    { name: 'onToggle', type: 'f', description: 'a function that toggles "on" state' },
+  ]}
+/>
