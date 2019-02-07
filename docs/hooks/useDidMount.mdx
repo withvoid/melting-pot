@@ -1,0 +1,32 @@
+---
+name: useDidMount
+menu: Hooks
+---
+
+# useDidMount
+
+## Purpose
+
+A replacement for componentDidMount in React
+
+## Usage
+
+```jsx
+const App = () => {
+  const [data, setData] = React.useState('');
+  useDidMount(async () => {
+    try {
+      const result = await fetch('http://foo-api', { method: 'GET' });
+      const resultJson = await result.json();
+      setData(resultJson.fooName);
+    } catch (error) {
+      console.log('API error', error);
+    }
+  });
+  return (
+    <div>
+      <p>{fooName}</p>
+    </div>
+  );
+};
+```

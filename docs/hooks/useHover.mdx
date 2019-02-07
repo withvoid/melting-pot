@@ -1,22 +1,22 @@
 ---
-name: useTouch
+name: useHover
 menu: Hooks
 ---
 
 import { Playground } from 'docz';
-import { useTouch } from '../../../src';
+import { useHover } from '../../src';
 
-# useTouch
+# useHover
 
 ```
-const { touched, bind } = useTouch();
+const { hover, bind } = useHover();
 ```
 
 ## Examples
 
 <Playground>
   {() => {
-    const { touched, bind } = useTouch();
+    const { hover, bind } = useHover();
     const styles = {
       wrapper: {
         height: 300,
@@ -35,12 +35,9 @@ const { touched, bind } = useTouch();
     };
     return (
       <div {...bind} style={styles.wrapper}>
+        <p>Hover on the white background to change the hover status</p>
         <p>
-          Touch on the white background to change the status, this will work for only touch enabled
-          devices.
-        </p>
-        <p>
-          Status: <span style={styles.emphasis}>{String(touched)}</span>
+          Status: <span style={styles.emphasis}>{String(hover)}</span>
         </p>
       </div>
     );
@@ -49,8 +46,8 @@ const { touched, bind } = useTouch();
 
 ## API
 
-useTouch() returns an Object
+useHover() returns an Object
 
-- touched: [boolean] Status if active or not
+- hover: [boolean] Status if active or not
 - bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
   the element.
