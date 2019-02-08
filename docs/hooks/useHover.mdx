@@ -33,10 +33,17 @@ const { hover, bind } = useHover();
         color: 'tomato',
         textTransform: 'capitalize',
       },
+      color: {
+        backgroundColor: 'red',
+        color: 'white',
+        paddingRight: '5px',
+        paddingLeft: '5px',
+      },
     };
+    const color = <span style={styles.color}>{hover ? 'yellow' : 'white'}</span>;
     return (
       <div {...bind} style={styles.wrapper}>
-        <p>Hover on the white background to change the hover status</p>
+        <p>Hover on the {color} background to change the hover status</p>
         <p>
           Status: <span style={styles.emphasis}>{String(hover)}</span>
         </p>
