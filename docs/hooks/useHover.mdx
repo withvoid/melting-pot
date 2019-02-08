@@ -4,6 +4,7 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
+import PropsTable from '../utils/PropsTable';
 import { useHover } from '../../src';
 
 # useHover
@@ -25,17 +26,22 @@ const { hover, bind } = useHover();
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'pointer',
-        backgroundColor: 'white',
+        backgroundColor: hover ? 'yellow' : 'white',
         color: 'black',
       },
       emphasis: {
-        color: 'tomato',
-        textTransform: 'capitalize',
+        display: 'inline-block',
+        backgroundColor: 'red',
+        color: 'white',
+        padding: 5,
+        width: 55,
+        textAlign: 'center',
       },
     };
+    const color = <span style={styles.emphasis}>{hover ? 'yellow' : 'white'}</span>;
     return (
       <div {...bind} style={styles.wrapper}>
-        <p>Hover on the white background to change the hover status</p>
+        <p>Hover on the {color} background to change the hover status</p>
         <p>
           Status: <span style={styles.emphasis}>{String(hover)}</span>
         </p>
@@ -46,8 +52,19 @@ const { hover, bind } = useHover();
 
 ## API
 
-useHover() returns an Object
+useHover() returns a `boolean` `hover`, which indicates if specified container hovered or not.
 
-- hover: [boolean] Status if active or not
-- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-  the element.
+<PropsTable
+  properties={[
+    {
+      name: 'hover',
+      type: 'b',
+      description: 'returns true if current container is hovered or not',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: 'returns `onMouseEnter` & `onMouseLeave` which we can spread to the element',
+    },
+  ]}
+/>
