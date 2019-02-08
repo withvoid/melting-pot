@@ -9,7 +9,7 @@
   </a>
 </p>
 
-The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use functions (mostly in hooks).
+The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily-use functions (mostly in hooks).
 
 ## Demo
 
