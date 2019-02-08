@@ -4,6 +4,7 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
+import PropsTable from '../utils/PropsTable';
 import { useHover } from '../../src';
 
 # useHover
@@ -25,7 +26,7 @@ const { hover, bind } = useHover();
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'pointer',
-        backgroundColor: 'white',
+        backgroundColor: hover ? 'yellow' : 'white',
         color: 'black',
       },
       emphasis: {
@@ -46,8 +47,19 @@ const { hover, bind } = useHover();
 
 ## API
 
-useHover() returns an Object
+useHover() returns a `boolean` `'hover'`, which indicates if specified container hovered or not.
 
-- hover: [boolean] Status if active or not
-- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-  the element.
+<PropsTable
+  properties={[
+    {
+      name: 'hover',
+      type: 'b',
+      description: 'returns true if current container is hovered or not',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: 'returns `onMouseEnter` & `onMouseLeave` which we can spread to the element',
+    },
+  ]}
+/>
