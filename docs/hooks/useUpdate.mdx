@@ -16,6 +16,7 @@ A replacement for componentDidUpdate in React. It will also be executed on first
 ## Usage
 
 Effect useUpdate will be called on every state update
+
 <Playground>
   {() => {
     const { on, onToggle } = useToggle();
@@ -54,10 +55,13 @@ Effect useUpdate will be called on every state update
         </button>
       </div>
     );
-  }}
+
+}}
+
 </Playground>
 
 Effect useUpdate will be called only on count state update
+
 <Playground>
   {() => {
     const { on, onToggle } = useToggle();
@@ -81,7 +85,7 @@ Effect useUpdate will be called only on count state update
         cursor: 'pointer'
       },
     }
-    
+
     useUpdate(() => {
       console.log('updated');
     }, count);
@@ -96,5 +100,7 @@ Effect useUpdate will be called only on count state update
         </button>
       </div>
     );
-  }}
+
+}}
+
 </Playground>
