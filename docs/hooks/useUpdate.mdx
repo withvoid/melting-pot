@@ -27,11 +27,11 @@ Effect useUpdate will be called only on count state update
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#81a1c1',
+        backgroundColor: count % 2 === 0 ? '#81a1c1' : '#d8dee9',
         padding: 20,
       },
       button: {
-        backgroundColor: 'tomato',
+        backgroundColor: count % 2 === 0 ? 'tomato' : 'gray',
         color: 'white',
         border: 0,
         padding: '10px 30px',
