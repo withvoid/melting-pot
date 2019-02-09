@@ -6,6 +6,7 @@ menu: Hooks
 import { useState } from 'react';
 import { Playground } from 'docz';
 import { useToggle, useUpdate } from '../../src';
+import PropsTable from '../utils/PropsTable';
 
 # useUpdate
 
@@ -15,56 +16,10 @@ A replacement for componentDidUpdate in React. It will also be executed on first
 
 ## Usage
 
-Effect useUpdate will be called on every state update
-
-<Playground>
-  {() => {
-    const { on, onToggle } = useToggle();
-    const [count, setCount] = useState(0);
-
-    const styles = {
-      container: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        backgroundColor: on ? '#81a1c1' : '#d8dee9',
-        padding: 20,
-      },
-      button: {
-        backgroundColor: on ? 'tomato' : 'gray',
-        color: 'white',
-        border: 0,
-        padding: '10px 30px',
-        margin: '0 10px',
-        outline: 0,
-        cursor: 'pointer'
-      },
-    }
-
-    useUpdate(() => {
-      console.log('updated');
-    });
-
-    return (
-      <div style={styles.container}>
-        <button style={styles.button} onClick={onToggle}>
-          {on ? 'On' : 'Off'}
-        </button>
-        <button style={styles.button} onClick={() => setCount(count + 1)}>
-          count({count})
-        </button>
-      </div>
-    );
-
-}}
-
-</Playground>
-
 Effect useUpdate will be called only on count state update
 
 <Playground>
   {() => {
-    const { on, onToggle } = useToggle();
     const [count, setCount] = useState(0);
 
     const styles = {
@@ -72,11 +27,11 @@ Effect useUpdate will be called only on count state update
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: on ? '#81a1c1' : '#d8dee9',
+        backgroundColor: '#81a1c1',
         padding: 20,
       },
       button: {
-        backgroundColor: on ? 'tomato' : 'gray',
+        backgroundColor: 'tomato',
         color: 'white',
         border: 0,
         padding: '10px 30px',
@@ -86,17 +41,16 @@ Effect useUpdate will be called only on count state update
       },
     }
 
-    useUpdate(() => {
-      console.log('updated');
-    }, count);
+    useUpdate({
+    action: () => console.log('Count was updated'),
+    exit: () => console.log('I am no longer being used'),
+
+}, count)
 
     return (
       <div style={styles.container}>
-        <button style={styles.button} onClick={onToggle}>
-          {on ? 'On' : 'Off'}
-        </button>
         <button style={styles.button} onClick={() => setCount(count + 1)}>
-          count({count})
+          You Pressed Me {count} Time(s)
         </button>
       </div>
     );
@@ -104,3 +58,8 @@ Effect useUpdate will be called only on count state update
 }}
 
 </Playground>
+
+## API
+
+useUpdate take first argument an object containing two functions `action` and `exit`. Other
+arguments are optional and are variables on whom change, hook will run.
