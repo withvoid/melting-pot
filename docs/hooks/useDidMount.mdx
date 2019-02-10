@@ -3,30 +3,99 @@ name: useDidMount
 menu: Hooks
 ---
 
+import { Playground } from 'docz';
+import { useDidMount } from '@withvoid/melting-pot';
+
 # useDidMount
 
 ## Purpose
 
-A replacement for componentDidMount in React
+A replacement for componentDidMount in React.
 
 ## Usage
 
-```jsx
-const App = () => {
-  const [data, setData] = React.useState('');
-  useDidMount(async () => {
-    try {
-      const result = await fetch('http://foo-api', { method: 'GET' });
-      const resultJson = await result.json();
-      setData(resultJson.fooName);
-    } catch (error) {
-      console.log('API error', error);
-    }
-  });
-  return (
-    <div>
-      <p>{fooName}</p>
-    </div>
-  );
-};
+```js
+import { useDidMount } from '@withvoid/melting-pot';
 ```
+
+## Syntax
+
+```js
+useDidMount(() => {
+  // do your one time action here ..
+});
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const [data, setData] = React.useState({});
+
+    const getInformation = async function () {
+      const API_URL = 'https://api.github.com/repos/withvoid/melting-pot';
+      try {
+        const result = await fetch(API_URL);
+        const resultJSON = await result.json();
+        setData({
+          name: resultJSON.full_name,
+          forkCount: resultJSON.forks_count,
+          starCount: resultJSON.stargazers_count,
+        });
+      } catch (error) {
+        console.log('Oops we have an error', error);
+      }
+    };
+
+    useDidMount(() => {
+      // this will be called only on initial mount
+      getInformation();
+    });
+
+    const styles = {
+      wrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        backgroundColor: 'white',
+        color: 'black',
+        padding: 15,
+      },
+      emphasis: {
+        display: 'inline-block',
+        backgroundColor: 'red',
+        color: 'white',
+        minWidth: 55,
+        padding: 5,
+        textAlign: 'center',
+      },
+      center: {
+        textAlign: 'center',
+      },
+    };
+
+    const isEmpty = !Object.keys(data).length;
+
+    const renderData = (
+      <p>
+        Repository name is <span style={styles.emphasis}>{data.name}</span> has
+        total <span style={styles.emphasis}>{data.starCount}</span> stars &
+        has been forked <span style={styles.emphasis}>{data.forkCount}</span> times
+      </p>
+    );
+
+    const renderLoader = (
+      <p style={styles.center}><span style={styles.emphasis}>Loading</span></p>
+    );
+
+    return (
+      <section style={styles.wrapper}>
+        {isEmpty ? renderLoader: renderData}
+      </section>
+    );
+
+}}
+
+</Playground>

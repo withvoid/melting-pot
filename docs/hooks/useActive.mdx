@@ -5,10 +5,19 @@ menu: Hooks
 
 import { Playground } from 'docz';
 import { useActive } from '@withvoid/melting-pot';
+import PropsTable from '../utils/PropsTable';
 
 # useActive
 
+## Usage
+
+```js
+import { useActive } from '@withvoid/melting-pot';
 ```
+
+## Syntax
+
+```js
 const { active, bind } = useActive();
 ```
 
@@ -25,17 +34,22 @@ const { active, bind } = useActive();
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'pointer',
-        backgroundColor: 'white',
-        color: 'black',
+        backgroundColor: active ? 'red' : 'white',
+        color: active ? 'white' : 'black',
       },
       emphasis: {
-        color: 'tomato',
-        textTransform: 'capitalize',
+        display: 'inline-block',
+        backgroundColor: active ? 'yellow' : 'red',
+        color: active ? 'black' : 'white',
+        padding: 5,
+        width: 55,
+        textAlign: 'center',
       },
     };
+    const color = <span style={styles.emphasis}>{active ? 'red' : 'white'}</span>;
     return (
       <div {...bind} style={styles.wrapper}>
-        <p>Click on the white background to change the active status</p>
+        <p>Click on the {color} background to change the active status</p>
         <p>
           Status: <span style={styles.emphasis}>{String(active)}</span>
         </p>
@@ -46,8 +60,20 @@ const { active, bind } = useActive();
 
 ## API
 
-useActive() returns an Object
+useActive() returns a `boolean` `active`, which indicates if specified container
+is in active state or not.
 
-- active: [boolean] Status if active or not
-- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-  the element.
+<PropsTable
+  properties={[
+    {
+      name: 'active',
+      type: 'b',
+      description: 'returns true if current container is in active state or not',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: 'returns `onMouseDown` & `onMouseUp` which we can spread to the element',
+    },
+  ]}
+/>
