@@ -36,5 +36,6 @@ export default {
       primary: '#CC1F2D',
     },
   },
+  codeSandbox: false,
   plugins: [doczPluginNetlify()],
 };
