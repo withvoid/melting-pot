@@ -11,6 +11,7 @@ module.exports = {
 		'jsx-a11y',
 		'react',
 		'prettier',
+		'react-hooks',
 	],
 	parser: 'babel-eslint',
 	parserOptions: {
@@ -49,6 +50,7 @@ module.exports = {
 		'react/no-did-mount-set-state': 'off',
 		'react/no-unused-prop-types': 'off', // Is still buggy
 		'react/jsx-one-expression-per-line': 'off',
+		'react-hooks/rules-of-hooks': 'error',
 
 		"jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
 		"jsx-a11y/label-has-for": [2, {
