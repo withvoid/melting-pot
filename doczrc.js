@@ -33,8 +33,9 @@ export default {
   themeConfig: {
     mode: 'dark',
     colors: {
-      primary: 'tomato',
+      primary: '#CC1F2D',
     },
   },
+  codeSandbox: false,
   plugins: [doczPluginNetlify()],
 };

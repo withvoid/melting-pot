@@ -1,0 +1,56 @@
+---
+name: useKeyPress
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useKeyPress } from '@withvoid/melting-pot';
+
+# useKeyPress
+
+```
+const [isKeyPressed, key] = useKeyPress('a');
+```
+
+- First argument returns a boolean if the key is pressed.
+- Second argument returns a string of the key e.g, in case of the example above
+  it is "a".
+
+## Examples
+
+<Playground>
+  {() => {
+    const [isHappyPress] = useKeyPress('h');
+    const [isSadPress] = useKeyPress('s');
+    const [isRobotPress] = useKeyPress('r');
+    const [isFoxPress] = useKeyPress('f');
+
+    const styles = {
+      root: {
+        backgroundColor: 'purple',
+      },
+      paragraph: {
+        padding: 30,
+        fontSize: 32,
+        color: '#fff',
+        textAlign: 'left',
+      },
+    };
+
+    return (
+      <div style={styles.root}>
+        <p style={styles.paragraph}>
+          <span role="img" aria-label="emoji">🎒</span>
+            Press h, s, r, f
+          <span role="img" aria-label="emoji">🎒</span>
+          {isHappyPress && <span role="img" aria-label="emoji">😊</span>}
+          {isSadPress && <span role="img" aria-label="emoji">😢</span>}
+          {isRobotPress && <span role="img" aria-label="emoji">🤖</span>}
+          {isFoxPress && <span role="img" aria-label="emoji">🦊</span>}
+        </p>
+      </div>
+    );
+
+}}
+
+</Playground>

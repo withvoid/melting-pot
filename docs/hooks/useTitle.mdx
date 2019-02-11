@@ -4,11 +4,12 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
-import { useTitle } from '../../../src';
+import { useTitle } from '@withvoid/melting-pot';
 
 # useTitle
 
 ## Purpose
+
 A hook utility to change the document title.
 
 ## Usage
@@ -38,8 +39,8 @@ useTitle('Superman');
         alignItems: 'center',
       },
       text: {
-        paddingLeft: 15, 
-        paddingRight: 15, 
+        paddingLeft: 15,
+        paddingRight: 15,
       },
       button: {
         backgroundColor: 'black',
@@ -50,7 +51,7 @@ useTitle('Superman');
         width: 35,
       },
     };
-    
+
     return (
       <div>
         <p>Look at the title of window, when you increment/decrement count</p>
@@ -61,5 +62,7 @@ useTitle('Superman');
         </section>
       </div>
     )
-  }}
+
+}}
+
 </Playground>

@@ -1,0 +1,159 @@
+---
+name: useFormField
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useFormField } from '@withvoid/melting-pot';
+import PropsTable from '../utils/PropsTable';
+
+# useFormField
+
+## Purpose
+
+The only form input hook that you will ever need.
+
+## Usage
+
+```js
+import { useFormField } from '@withvoid/melting-pot';
+```
+
+## Syntax
+
+```js
+const {
+  value,
+  set,
+  reset,
+  validate,
+  isEmpty,
+  isDirty,
+  isSubmitted,
+  isValid,
+  bind,
+} = useFormField();
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const form = {
+      name: useFormField(),
+      age: useFormField(),
+    };
+
+    const onSubmit = event => {
+      event.preventDefault();
+      if (!onValidate()) {
+        return;
+      }
+      alert('Success 😄, Let\'s Start Over!');
+      onReset();
+    };
+
+    const onReset = () => Object.values(form).map(({ reset }) => reset());
+
+    const onValidate = () => {
+      let isValid = true;
+      Object.values(form).map(({ isEmpty, validate }) => {
+        validate();
+        if (isEmpty) {
+          isValid = false;
+        }
+      });
+      return isValid;
+    };
+
+    const styles = {
+      input: {
+        display: 'block',
+        boxSizing: 'border-box',
+        width: '100%',
+        height: 35,
+        padding: 15,
+        marginBottom: 15,
+      },
+      inputHelper: {
+        fontSize: 11,
+        color: 'red',
+      },
+      button: {
+        border: 0,
+        outline: 0,
+        height: 35,
+        width: 75,
+        marginTop: 10,
+        marginRight: 15,
+        borderRadius: 2,
+        backgroundColor: 'white',
+        color: 'black',
+        cursor: 'pointer',
+      },
+      error: {
+        color: 'red',
+      },
+    };
+
+    return (
+      <div>
+        <form onSubmit={onSubmit}>
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            {...form.name.bind}
+            placeholder="What is your name .."
+            style={styles.input}
+            autoComplete="off"
+          />
+          {form.name.isValid && (
+            <p style={styles.inputHelper}>Name is required*</p>
+          )}
+          <label htmlFor="age">Age</label>
+          <input
+            id="age"
+            {...form.age.bind}
+            type="number"
+            placeholder="What is your age .."
+            style={styles.input}
+          />
+          {form.age.isValid && (
+            <p style={styles.inputHelper}>Age is required*</p>
+          )}
+          <button type="submit" style={styles.button}>Submit</button>
+          <button type="button" onClick={onReset} style={styles.button}>Reset</button>
+        </form>
+      </div>
+    )
+
+}}
+
+</Playground>
+
+## API
+
+useFormField(initialValue) returns an `Object`, initialValue is `optional` defaults to `''`
+
+<PropsTable
+  properties={[
+    { name: 'value', type: 's', description: 'value of input' },
+    { name: 'set', type: 'f', description: 'a setter method to set value of input' },
+    { name: 'reset', type: 'f', description: 'reset state to initial' },
+    { name: 'validate', type: 'f', description: 'invokes a method to validate form' },
+    { name: 'isEmpty', type: 'b', description: 'checks if form item is empty or not' },
+    { name: 'isDirty', type: 'b', description: 'checks if form item is once changed atleast' },
+    { name: 'isSubmitted', type: 'b', description: 'returns true, when validate() is invoked' },
+    {
+      name: 'isValid',
+      type: 'b',
+      description:
+        'Returns a true if `(!isEmpty && isDirty&& isSubmitted) || (!isEmpty && isDirty)`',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: '`value` & `onChange` in object which we can spread in input field',
+    },
+  ]}
+/>

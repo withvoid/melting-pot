@@ -1,0 +1,105 @@
+---
+name: useUpdate
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useUpdate } from '@withvoid/melting-pot';
+import PropsTable from '../utils/PropsTable';
+
+# useUpdate
+
+## Purpose
+
+A replacement for componentDidUpdate in React. It will also be executed on first render.
+
+## Usage
+
+Effect useUpdate will be called every time a `state` or `prop` updates
+
+<Playground>
+  {() => {
+    const [count, setCount] = React.useState(0);
+
+    const styles = {
+      container: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: count % 2 === 0  ? '#81a1c1' : '#d8dee9',
+        padding: 20,
+      },
+      button: {
+        backgroundColor: count % 2 === 0  ? 'tomato' : 'gray',
+        color: 'white',
+        border: 0,
+        padding: '10px 30px',
+        margin: '0 10px',
+        outline: 0,
+        cursor: 'pointer'
+      },
+    }
+
+    useUpdate({
+      action: () => console.log('state was updated'),
+      exit: () => console.log('I am no longer being used'),
+    });
+
+    return (
+      <div style={styles.container}>
+        <button style={styles.button} onClick={() => setCount(count + 1)}>
+          You Pressed Me {count} Time(s)
+        </button>
+      </div>
+    );
+
+}}
+
+</Playground>
+
+Effect useUpdate will be called only on count state update
+
+<Playground>
+  {() => {
+    const [count, setCount] = React.useState(0);
+
+    const styles = {
+      container: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: count % 2 === 0 ? '#81a1c1' : '#d8dee9',
+        padding: 20,
+      },
+      button: {
+        backgroundColor: count % 2 === 0 ? 'tomato' : 'gray',
+        color: 'white',
+        border: 0,
+        padding: '10px 30px',
+        margin: '0 10px',
+        outline: 0,
+        cursor: 'pointer'
+      },
+    }
+
+    useUpdate({
+      action: () => console.log('Count was updated'),
+      exit: () => console.log('I am no longer being used'),
+    }, count);
+
+    return (
+      <div style={styles.container}>
+        <button style={styles.button} onClick={() => setCount(count + 1)}>
+          You Pressed Me {count} Time(s)
+        </button>
+      </div>
+    );
+
+}}
+
+</Playground>
+
+## API
+
+useUpdate take first argument an object containing two functions `action` and `exit`. Other
+arguments are optional and are variables on whom change, hook will run.

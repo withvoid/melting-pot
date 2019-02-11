@@ -4,12 +4,12 @@ menu: Hooks
 ---
 
 import { Playground } from 'docz';
-import { useTouch } from '../../../src';
+import { useTouch } from '@withvoid/melting-pot';
 
 # useTouch
 
 ```
-const { touched, bind } = useTouch(); 
+const { touched, bind } = useTouch();
 ```
 
 ## Examples
@@ -32,16 +32,18 @@ const { touched, bind } = useTouch();
         color: 'tomato',
         textTransform: 'capitalize',
       },
-    }
+    };
     return (
       <div {...bind} style={styles.wrapper}>
         <p>
-          Touch on the white background to change the status, this will
-          work for only touch enabled devices.
+          Touch on the white background to change the status, this will work for only touch enabled
+          devices.
         </p>
-        <p>Status: <span style={styles.emphasis}>{String(touched)}</span></p>
+        <p>
+          Status: <span style={styles.emphasis}>{String(touched)}</span>
+        </p>
       </div>
-    )
+    );
   }}
 </Playground>
 
@@ -49,6 +51,6 @@ const { touched, bind } = useTouch();
 
 useTouch() returns an Object
 
-* touched: [boolean] Status if active or not
-* bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
-the element. 
+- touched: [boolean] Status if active or not
+- bind [Object] Has `onMouseDown` & `onMouseUp` functions that we can spread to
+  the element.

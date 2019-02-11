@@ -1,33 +1,40 @@
-# Melting Pot
+## Melting Pot
 
-The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use funcs and so on. See [demo and docs](https://melting-pot.now.sh/).
+<p align="center">
+  <img src="https://badgen.net/npm/v/@withvoid/melting-pot" alt="">
+  <img src="https://badgen.net/badge/license/MIT/blue" alt="">
+  <img src="https://badgen.net/npm/dt/@withvoid/melting-pot" alt="">
+  <a href="https://packagephobia.now.sh/result?p=@withvoid/melting-pot@latest">
+    <img src="https://packagephobia.now.sh/badge?p=@withvoid/melting-pot@latest" alt="">
+  </a>
+</p>
+
+The `@withvoid/melting-pot` package contains utilities, helper methods - your typical daily use functions (mostly in hooks).
 
 ## Demo
 
-Hosted at 2 great platforms together.
-
-Zeits NOW: [melting-pot.now.sh](https://melting-pot.now.sh/)
-Netlify: [melting-pot.netlify.com](https://melting-pot.netlify.com)
+[Melting-Pot Documentation](https://melting-pot.netlify.com)
 
 ## Getting Started
 
 Install the package via npm or yarn:
 
-`npm install @withvoid/melting-pot`
+```js
+npm install @withvoid/melting-pot --save
+```
+
+Or if you prefer <b>yarn</b>
+
+```js
+yarn add @withvoid/melting-pot
+```
 
 Create your first application like so:
 
-```js
-import React from "react"
-import { useWindowSize } from "@withvoid/melting-pot"
-
-const App = () => (
-  const {width, height} = useWindowSize();
-  <div>
-    <p>The current height of screen is {height}px</p>
-    <button type="button">
-      {width <= 340 ? 'Click': 'Click Me!'}
-    </button>
-  </div>
-)
-```
+<div align="center">
+  <img 
+    alt="Melting-Pot code preview"
+    src="static/images/preview.png"
+    height="400px"
+  />
+</div>

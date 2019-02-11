@@ -3,28 +3,30 @@ name: useOnlineStatus
 menu: Hooks
 ---
 
+import { Playground } from 'docz';
+import { useOnlineStatus } from '@withvoid/melting-pot';
+
 # useOnlineStatus
 
 ## Usage
+
 ```
 const { online } = useOnlineStatus();
 ```
 
 ## Explanation
+
 useOnlineStatus() internally uses the windows event listener for online & offline,
-based on that. 
+based on that.
 
 useOnlineStatus() has key "online" which returns type Boolean
 that will change. When internet connected or not.
 
-## Example 
-
-import { Playground } from 'docz';
-import { useOnlineStatus } from '../../../src';
+## Example
 
 <Playground>
   {() => {
-    const { online } = useOnlineStatus()
+    const { online } = useOnlineStatus();
     return (
       <div>
         <p>
@@ -35,6 +37,6 @@ import { useOnlineStatus } from '../../../src';
         </p>
         <p>{online ? 'You Are Online' : 'You Are Offline'}</p>
       </div>
-    )
+    );
   }}
 </Playground>
