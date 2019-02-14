@@ -11,6 +11,7 @@ export { default as useWindowScrollPosition } from './hooks/useWindowScrollPosit
 export { default as useTitle } from './hooks/useTitle';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useUpdate } from './hooks/useUpdate';
+export { default as useMouseMove } from './hooks/useMouseMove';
 
 // Higher Order Components
 export { default as withCompose } from './hoc/withCompose';

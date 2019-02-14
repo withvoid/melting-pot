@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { useWindowSize, useFormField, useTitle, useHover } from '../src';
+import { useWindowSize, useFormField, useTitle, useHover, useMouseMove } from '../src';
 
 const PADDING = 15;
 const MARGIN = 15;
@@ -87,11 +87,12 @@ const App = () => {
   const size = useWindowSize();
   const titleInput = useFormField('Melting Pot');
   const hoverEl = useHover();
+  const mouseCoords = useMouseMove();
   useTitle(titleInput.value || 'Empty');
 
   const styles = myStyles('superman');
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} {...mouseCoords.bind}>
       <aside style={styles.sidebar}>
         <h2 style={styles.heading}>Meltin Pot</h2>
       </aside>
@@ -101,6 +102,9 @@ const App = () => {
           Did you know that the current width of this window is {size.width}px & the height of this
           window is {size.height}px. Try resizing the window horizontally/vertically & see the
           values of width & height change.
+        </p>
+        <p>
+          Did you know your mouse coordinates are x: {mouseCoords.x} and y: {mouseCoords.y}
         </p>
         <h2 style={styles.heading}>Fun!</h2>
         <p style={styles.paragraph}>
