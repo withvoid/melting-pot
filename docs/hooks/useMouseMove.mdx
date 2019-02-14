@@ -1,0 +1,44 @@
+---
+name: useMouseMove
+menu: Hooks
+---
+
+import { Playground } from 'docz';
+import { useMouseMove } from '@withvoid/melting-pot';
+
+# useMouseMove
+
+## Purpose
+
+A hook utility to get current mouse pointer coordinates on screen.
+
+## Usage
+
+```
+import { useMouseMove } from '@withvoid/melting-pot';
+```
+
+## Syntax
+```
+const { mouseCoordinates, bind} = useMouseMove();
+
+x: {mouseCoordinates.x}
+y: {mouseCoordinates.y}
+```
+
+## Examples
+
+<Playground>
+  {() => {
+    const mosueCoords = useMouseMove();
+
+    return (
+      <div {...mosueCoords.bind}>
+        <h4>Did you know?</h4>
+        <p>Your mouse pointer coordinates are x: {mosueCoords.x} and y: {mosueCoords.y}</p>
+      </div>
+    )
+
+}}
+
+</Playground>
