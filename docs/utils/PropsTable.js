@@ -35,6 +35,9 @@ const getType = type => {
     case 'o': {
       return 'object';
     }
+    case 'n': {
+      return 'number';
+    }
     default: {
       return 'NaN';
     }
