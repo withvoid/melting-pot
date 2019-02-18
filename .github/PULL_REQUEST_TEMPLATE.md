@@ -29,9 +29,9 @@ As creating an issue or a pull request, please begin it with the following prefi
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
-- [ ] Added Issue No. if any that related to this PR e,g `closses #ISSUE_NO` 
+- [ ] Added Issue No. if any that related to this PR e,g `closes #ISSUE_NO` 
 
 <!-- 
   Read more on automatically closing issue associated with PR on Github 
-  https://help.github.com/articles/closing-issues-using-keywords/)
+  https://help.github.com/articles/closing-issues-using-keywords/
 -->
