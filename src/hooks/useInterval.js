@@ -12,16 +12,19 @@ const useInterval = (callback, delay) => {
   });
 
   // Set up the interval.
-  React.useEffect(() => {
-    const tick = () => {
-      savedCallback.current();
-    };
-    if (delay !== null) {
-      const id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-    return () => {};
-  }, [delay]);
+  React.useEffect(
+    () => {
+      const tick = () => {
+        savedCallback.current();
+      };
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+      return () => {};
+    },
+    [delay],
+  );
 };
 
 export default useInterval;
