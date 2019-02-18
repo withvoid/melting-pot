@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { useWindowSize, useFormField, useTitle, useHover } from '../src';
+import { useWindowSize, useFormField, useTitle, useHover, useMouseMove } from '../src';
 
 const PADDING = 15;
 const MARGIN = 15;
@@ -80,6 +80,12 @@ const myStyles = theme => {
     hoverSectionActive: {
       backgroundColor: selectedColor.hoverDark,
     },
+    miniBox: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: selectedColor.hoverLight,
+    },
   };
 };
 
@@ -87,11 +93,13 @@ const App = () => {
   const size = useWindowSize();
   const titleInput = useFormField('Melting Pot');
   const hoverEl = useHover();
+  const mouseCoords = useMouseMove();
+  const yellowBoxCoords = useMouseMove();
   useTitle(titleInput.value || 'Empty');
 
   const styles = myStyles('superman');
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} {...mouseCoords.bind}>
       <aside style={styles.sidebar}>
         <h2 style={styles.heading}>Meltin Pot</h2>
       </aside>
@@ -102,6 +110,17 @@ const App = () => {
           window is {size.height}px. Try resizing the window horizontally/vertically & see the
           values of width & height change.
         </p>
+        <h2>Mouse Coordinates</h2>
+        <p>
+          Did you know your mouse coordinates are w.r.t screen are x: {mouseCoords.x} and y:{' '}
+          {mouseCoords.y}
+        </p>
+        <section {...yellowBoxCoords.bind} style={styles.miniBox}>
+          {/* <section ref={yellowBoxRef} style={styles.miniBox}> */}
+          <p>
+            mouse x,y with respect to blue box {yellowBoxCoords.x}, {yellowBoxCoords.y}
+          </p>
+        </section>
         <h2 style={styles.heading}>Fun!</h2>
         <p style={styles.paragraph}>
           Try changing the title of the input field below & watch as the title of the browser window
