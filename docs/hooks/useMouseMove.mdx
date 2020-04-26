@@ -5,6 +5,7 @@ menu: Hooks
 
 import { Playground } from 'docz';
 import { useMouseMove } from '@withvoid/melting-pot';
+import PropsTable from '../utils/PropsTable';
 
 # useMouseMove
 
@@ -14,31 +15,87 @@ A hook utility to get current mouse pointer coordinates on screen.
 
 ## Usage
 
-```
+```js
 import { useMouseMove } from '@withvoid/melting-pot';
 ```
 
 ## Syntax
-```
-const { mouseCoordinates, bind} = useMouseMove();
 
-x: {mouseCoordinates.x}
-y: {mouseCoordinates.y}
+```js
+const mouseElementCoords = useMouseMove(); // { x, y, bind }
+const mouseWindowCoords = useMouseMove({ isWindow: true }); // { x, y }
 ```
 
 ## Examples
 
 <Playground>
   {() => {
-    const mosueCoords = useMouseMove();
+    const mouseElementCoords = useMouseMove();
+    const mouseWindowCoords = useMouseMove({ isWindow: true });
+
+    const styles = {
+      wrapper: {
+        backgroundColor: 'white',
+        color: 'black',
+        padding: 20,
+        textAlign: 'center',
+      },
+      miniBox: {
+        boxSizing: 'border-box',
+        color: 'white',
+        backgroundColor: 'tomato',
+        width: '100%',
+        borderRadius: 4,
+        fontSize: 32,
+        padding: 20,
+      }
+    };
 
     return (
-      <div {...mosueCoords.bind}>
-        <h4>Did you know?</h4>
-        <p>Your mouse pointer coordinates are x: {mosueCoords.x} and y: {mosueCoords.y}</p>
+      <div style={styles.wrapper}>
+        <h2>Did you know?</h2>
+        <div style={styles.miniBox} {...mouseElementCoords.bind}>
+          <p>
+            Move mouse in this box for x-axis {mouseElementCoords.x} &
+            y-axis {mouseElementCoords.y} to update.
+          </p>
+        </div>
+        <h2>
+          Overall mouse coordinates are x-axis {mouseWindowCoords.x} &
+          y-axis {mouseWindowCoords.y}
+        </h2>
       </div>
     )
 
 }}
 
 </Playground>
+
+## API
+
+useMouseMove() returns a `object` which tells the current x/y axis position of
+mouse based on the current HTML element or window root element.
+
+P.S: If we pass in { isWindow: true } to `useMouseMove` then
+`bind` object won't be returned instead a `mousemove` event will be attached to
+`window` object.
+
+<PropsTable
+  properties={[
+    {
+      name: 'x',
+      type: 'n',
+      description: 'x-axis position of mouse',
+    },
+    {
+      name: 'y',
+      type: 'n',
+      description: 'y-axis position of mouse',
+    },
+    {
+      name: 'bind',
+      type: 'o',
+      description: 'returns functions that should be binded to HTML element',
+    },
+  ]}
+/>

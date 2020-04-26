@@ -5,11 +5,14 @@ const useFormField = (initialValue = '') => {
   const [isDirty, setDirty] = React.useState(false);
   const [isSubmitted, setSubmitted] = React.useState(false);
 
-  React.useEffect(() => {
-    if (value.length > 0) {
-      setDirty(true);
-    }
-  }, [value]);
+  React.useEffect(
+    () => {
+      if (value.length > 0) {
+        setDirty(true);
+      }
+    },
+    [value],
+  );
 
   const reset = () => {
     set(initialValue);
