@@ -2,9 +2,9 @@
 node_modules
 
 # package manager
+package-lock.json
 yarn.lock
 yarn-error.log
-package-lock.json
 
 # distribution
 dist
