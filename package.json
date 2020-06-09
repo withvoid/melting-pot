@@ -9,7 +9,7 @@
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
     "docz:dev": "docz dev",
-    "docz:build": "docz build",
+    "docz:build": "node_modules/.bin/docz build",
     "lint:debug": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
     "lint:stage": "eslint --fix",
