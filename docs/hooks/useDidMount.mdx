@@ -31,7 +31,6 @@ useDidMount(() => {
 <Playground>
   {() => {
     const [data, setData] = React.useState({});
-
     const getInformation = async function () {
       const API_URL = 'https://api.github.com/repos/withvoid/melting-pot';
       try {
@@ -46,12 +45,10 @@ useDidMount(() => {
         console.log('Oops we have an error', error);
       }
     };
-
     useDidMount(() => {
       // this will be called only on initial mount
       getInformation();
     });
-
     const styles = {
       wrapper: {
         display: 'flex',
@@ -75,9 +72,7 @@ useDidMount(() => {
         textAlign: 'center',
       },
     };
-
     const isEmpty = !Object.keys(data).length;
-
     const renderData = (
       <p>
         Repository name is <span style={styles.emphasis}>{data.name}</span> has
@@ -85,17 +80,13 @@ useDidMount(() => {
         has been forked <span style={styles.emphasis}>{data.forkCount}</span> times
       </p>
     );
-
     const renderLoader = (
       <p style={styles.center}><span style={styles.emphasis}>Loading</span></p>
     );
-
     return (
       <section style={styles.wrapper}>
         {isEmpty ? renderLoader: renderData}
       </section>
     );
-
-}}
-
+  }}
 </Playground>

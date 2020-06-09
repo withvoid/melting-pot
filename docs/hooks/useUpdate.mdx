@@ -20,7 +20,6 @@ Effect useUpdate will be called every time a `state` or `prop` updates
 <Playground>
   {() => {
     const [count, setCount] = React.useState(0);
-
     const styles = {
       container: {
         display: 'flex',
@@ -38,13 +37,11 @@ Effect useUpdate will be called every time a `state` or `prop` updates
         outline: 0,
         cursor: 'pointer'
       },
-    }
-
+    };
     useUpdate({
       action: () => console.log('state was updated'),
       exit: () => console.log('I am no longer being used'),
     });
-
     return (
       <div style={styles.container}>
         <button style={styles.button} onClick={() => setCount(count + 1)}>
@@ -52,9 +49,7 @@ Effect useUpdate will be called every time a `state` or `prop` updates
         </button>
       </div>
     );
-
-}}
-
+  }}
 </Playground>
 
 Effect useUpdate will be called only on count state update
@@ -62,7 +57,6 @@ Effect useUpdate will be called only on count state update
 <Playground>
   {() => {
     const [count, setCount] = React.useState(0);
-
     const styles = {
       container: {
         display: 'flex',
@@ -81,12 +75,10 @@ Effect useUpdate will be called only on count state update
         cursor: 'pointer'
       },
     }
-
     useUpdate({
       action: () => console.log('Count was updated'),
       exit: () => console.log('I am no longer being used'),
     }, count);
-
     return (
       <div style={styles.container}>
         <button style={styles.button} onClick={() => setCount(count + 1)}>
@@ -94,9 +86,7 @@ Effect useUpdate will be called only on count state update
         </button>
       </div>
     );
-
-}}
-
+  }}
 </Playground>
 
 ## API

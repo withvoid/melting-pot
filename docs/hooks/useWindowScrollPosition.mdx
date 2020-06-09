@@ -17,7 +17,6 @@ const { x, y } = useWindowScrollPosition();
 <Playground>
   {() => {
     const { x, y } = useWindowScrollPosition();
-
     const styles = {
       wrapper: {
         height: 300,
@@ -33,7 +32,6 @@ const { x, y } = useWindowScrollPosition();
         color: 'white',
       },
     }
-
     return (
       <div style={styles.wrapper}>
         <h1 style={styles.text}>
@@ -42,9 +40,7 @@ const { x, y } = useWindowScrollPosition();
         <h3 style={styles.focusSection}>x coord: {x}, y coord {y}</h3>
       </div>
     )
-
-}}
-
+  }}
 </Playground>
 
 ## API

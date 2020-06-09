@@ -1,13 +1,13 @@
 {
   "dist/melting-pot.cjs.js": {
-    "bundled": 5126,
-    "minified": 5126,
-    "gzipped": 1624
+    "bundled": 6747,
+    "minified": 6747,
+    "gzipped": 2153
   },
   "dist/melting-pot.esm.js": {
-    "bundled": 4214,
-    "minified": 4214,
-    "gzipped": 1474,
+    "bundled": 5624,
+    "minified": 5603,
+    "gzipped": 1969,
     "treeshaked": {
       "rollup": {
         "code": 14,

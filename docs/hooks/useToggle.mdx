@@ -18,7 +18,6 @@ const { on, onToggle } = useToggle();
 <Playground>
   {() => {
     const { on, onToggle } = useToggle();
-
     const styles = {
       container: {
         display: 'flex',
@@ -36,7 +35,6 @@ const { on, onToggle } = useToggle();
         cursor: 'pointer'
       },
     }
-
     return (
       <div style={styles.container}>
         <button style={styles.button} onClick={onToggle}>
@@ -44,9 +42,7 @@ const { on, onToggle } = useToggle();
         </button>
       </div>
     );
-
-}}
-
+  }}
 </Playground>
 
 ## API

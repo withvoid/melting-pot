@@ -53,7 +53,6 @@ example below.
         }
       };
     };
-
     const withB = BaseComponent => {
       return class HOC extends React.Component {
         constructor() {
@@ -68,7 +67,6 @@ example below.
         }
       };
     };
-
     const App = props => {
       const { a, b } = props;
       return (
@@ -78,12 +76,9 @@ example below.
         </div>
       );
     };
-
     const Enhancer = withCompose(withA, withB)(App);
-    return <Enhancer />
-
-}}
-
+    return <Enhancer></Enhancer>
+  }}
 </Playground>
 
 ## API

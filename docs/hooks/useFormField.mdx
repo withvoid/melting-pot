@@ -43,7 +43,6 @@ const {
       name: useFormField(),
       age: useFormField(),
     };
-
     const onSubmit = event => {
       event.preventDefault();
       if (!onValidate()) {
@@ -52,9 +51,7 @@ const {
       alert('Success 😄, Let\'s Start Over!');
       onReset();
     };
-
     const onReset = () => Object.values(form).map(({ reset }) => reset());
-
     const onValidate = () => {
       let isValid = true;
       Object.values(form).map(({ isEmpty, validate }) => {
@@ -65,7 +62,6 @@ const {
       });
       return isValid;
     };
-
     const styles = {
       input: {
         display: 'block',
@@ -95,7 +91,6 @@ const {
         color: 'red',
       },
     };
-
     return (
       <div>
         <form onSubmit={onSubmit}>
@@ -126,9 +121,7 @@ const {
         </form>
       </div>
     )
-
-}}
-
+  }}
 </Playground>
 
 ## API

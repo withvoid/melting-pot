@@ -27,9 +27,8 @@ const doczPluginNetlify = () => {
 export default {
   title: 'Melting Pot',
   description: 'A utility library for daily use.',
-  source: './docs',
-  debug: false,
-  theme: 'docz-theme-default',
+  src: './docs',
+  debug: true,
   themeConfig: {
     mode: 'dark',
     colors: {
