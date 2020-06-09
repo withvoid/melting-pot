@@ -31,14 +31,11 @@ y: {mouseCoordinates.y}
 <Playground>
   {() => {
     const mosueCoords = useMouseMove();
-
     return (
       <div {...mosueCoords.bind}>
         <h4>Did you know?</h4>
         <p>Your mouse pointer coordinates are x: {mosueCoords.x} and y: {mosueCoords.y}</p>
       </div>
     )
-
-}}
-
+  }}
 </Playground>

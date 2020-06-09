@@ -23,16 +23,12 @@ useTitle('Superman');
 <Playground>
   {() => {
     const [count, setCount] = React.useState(1);
-    
     useTitle(`Current count ${count}`);
-
     const onChange = value => {
       setCount(count => count + value);
     };
-
     const onIncrement = () => onChange(1);
     const onDecrement = () => onChange(-1);
-
     const styles = {
       section: {
         display: 'flex',
@@ -51,7 +47,6 @@ useTitle('Superman');
         width: 35,
       },
     };
-
     return (
       <div>
         <p>Look at the title of window, when you increment/decrement count</p>
@@ -62,7 +57,5 @@ useTitle('Superman');
         </section>
       </div>
     )
-
-}}
-
+  }}
 </Playground>

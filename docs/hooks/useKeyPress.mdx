@@ -24,7 +24,6 @@ const [isKeyPressed, key] = useKeyPress('a');
     const [isSadPress] = useKeyPress('s');
     const [isRobotPress] = useKeyPress('r');
     const [isFoxPress] = useKeyPress('f');
-
     const styles = {
       root: {
         backgroundColor: 'purple',
@@ -36,7 +35,6 @@ const [isKeyPressed, key] = useKeyPress('a');
         textAlign: 'left',
       },
     };
-
     return (
       <div style={styles.root}>
         <p style={styles.paragraph}>
@@ -50,7 +48,5 @@ const [isKeyPressed, key] = useKeyPress('a');
         </p>
       </div>
     );
-
-}}
-
+  }}
 </Playground>

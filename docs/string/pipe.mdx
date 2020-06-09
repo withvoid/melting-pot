@@ -67,19 +67,14 @@ example below.
         color: 'red',
       },
     };
-
     const onCapital = (string = '') => string.toUpperCase();
-
     const onRemoveSpaces = (string = '') => string.replace(' ', '');
-
     const onAppendSymbol = (symbol = '') => (string = '') => {
       return `${string}${symbol}`;
     };
-
     const onPreAppendSymbol = (symbol = '') => (string = '') => {
       return `${symbol}${string}`;
     };
-
     return (
       <div style={styles.wrapper}>
         <h3 style={{ ...styles.heading, ...styles.hard }}>Difficult</h3>
@@ -101,9 +96,7 @@ example below.
         </p>
       </div>
     );
-
-}}
-
+  }}
 </Playground>
 
 ## API
