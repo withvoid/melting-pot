@@ -6,7 +6,12 @@
   "plugins": [
     "@babel/plugin-proposal-export-default-from",
     [
-      "module-resolver", { "alias": { "@withvoid/melting-pot": "./src" } }
+      "module-resolver",
+      {
+        "alias": {
+          "@withvoid/melting-pot": "./src"
+        }
+      }
     ]
   ]
 }
