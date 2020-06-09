@@ -2,8 +2,8 @@ import React from 'react';
 
 const useWindowScrollPosition = () => {
   const [scroll, setScroll] = React.useState({
-    x: window.pageXOffset,
-    y: window.pageYOffset,
+    x: 0,
+    y: 0,
   });
 
   const onHandle = () => {
@@ -14,6 +14,7 @@ const useWindowScrollPosition = () => {
   };
 
   React.useEffect(() => {
+    onHandle();
     window.addEventListener('scroll', onHandle);
     return () => {
       window.removeEventListener('scroll', onHandle);
